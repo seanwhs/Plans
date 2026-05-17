@@ -243,6 +243,35 @@ To demonstrate how these moving parts cooperate, let’s trace a real-world scen
 
 ```
 
+
+```mermaid
+flowchart LR
+
+%% =======================
+%% Core Content Flow
+%% =======================
+Sanity[Sanity Studio] -->|Webhook| Next[Bun / Next.js App]
+Next -->|Cache Revalidate| Next
+
+%% =======================
+%% Auth Flow
+%% =======================
+Clerk[User Signup via Clerk] --> Middleware[Middleware Auth Check]
+Middleware --> Next
+
+%% =======================
+%% Event System
+%% =======================
+Middleware -->|Emit Event| Inngest[Inngest Engine]
+
+%% =======================
+%% Inngest Workflow Steps
+%% =======================
+Inngest --> Step1[Step 1: Init Profile in Postgres]
+Inngest --> Step2[Step 2: Provision Appwrite Bucket]
+Inngest --> Step3[Step 3: Trigger Billing / Emails]
+```
+
 ### 1. Content Modification (Sanity Pipeline)
 
 1. An editor updates a landing page inside Sanity Studio.
