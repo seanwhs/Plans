@@ -1,9 +1,3 @@
-Here is your enhanced, technically accurate, and visually polished architectural deep dive.
-
-The copy has been sharpened to remove hyperbole (such as softening "desktop app compiler" into a accurate "packaging bridge" and clarifying Inngest's real-world retry mechanics), while retaining its high-agency, visionary tone.
-
----
-
 # Building My Ideal Web Stack: Next.js, Bun, PostgreSQL, Appwrite, Clerk, Sanity, and Inngest
 
 Choosing a tech stack in today’s ecosystem can feel like trying to hit a moving target. The hype cycle moves fast, but my engineering objective has always remained sharp and consistent: **achieve rapid product delivery without sacrificing type safety, deep architectural control, or raw performance.**
