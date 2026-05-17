@@ -228,22 +228,6 @@ Instead of tightly coupling services together via synchronous API calls, I let e
 
 To demonstrate how these moving parts cooperate, let’s trace a real-world scenario: **An editor updates a landing page, a new user signs up, onboarding workflows execute asynchronously, and the user downloads a protected asset.**
 
-```
-[Sanity Studio] ──(Webhook)──> [Next.js / Bun] ──(Cache Revalidate)
-                                      │
-[User Signup via Clerk] ──────────────┼──> [Middleware Auth Check]
-                                      │
-                               (Emit Event)
-                                      │
-                                      ▼
-                               [Inngest Engine]
-                               ├── Step 1: Init Profile in Postgres
-                               ├── Step 2: Provision Appwrite Bucket
-                               └── Step 3: Trigger Billing/Emails
-
-```
-
-
 ```mermaid
 flowchart LR
 
