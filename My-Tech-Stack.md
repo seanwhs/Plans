@@ -13,31 +13,37 @@ To bridge the gap between highly structured relational data (like transactions a
 When designing applications, I prefer to keep a clear mental model of where compute happens, where state lives, and how data flows. I segment this stack across three distinct layers: the **Compute Layer**, the **Event & Asynchronous Orchestration Layer**, and **Managed Utility Services**.
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│               COMPUTE & APPLICATION LAYER (My Control Center)          │
-│                                                                        │
-│   ┌───────────────────────────┐            ┌───────────────────────┐   │
-│   │        Next.js App        │  Executes  │      Bun Runtime      │   │
-│   │ (React, TS, Server Comp)  │───────────>│ (Fast HTTP, Bundler)  │   │
-│   └───────────────────────────┘            └───────────────────────┘   │
-└─────────────────────────────────────┬──────────────────────────────────┘
-                                      │
-            ┌─────────────────────────┴─────────────────────────┐
-            ▼                                                   ▼
-┌───────────────────────────────────────┐           ┌───────────────────────┐
-│        INNGEST WORKFLOW ENGINE        │           │      PostgreSQL       │
-│  (Event Bus, Idempotent Retries,      │           │ (Core Complex         │
-│   State Reconciliation, Concurrency)  │           │  Relations & ACID)    │
-└───────────────────────────────────────┘           └───────────────────────┘
-            │
-            ├───────────────────────────────────────────────────┐
-            ▼                                                   ▼
-┌───────────────────────┐           ┌───────────────────────┐   ┌───────────────────────┐
-│       Clerk Auth      │           │     Appwrite BaaS     │   │       Sanity CMS      │
-│  (Managed Identity,   │           │  (Storage, Webhooks,  │   │ (Content Lake, GROQ,  │
-│   JWTs, User Metadata)│           │   Realtime Events)    │   │  Fluid Dynamic Copy)  │
-└───────────────────────┘           └───────────────────────┘   └───────────────────────┘
+```mermaid
+flowchart TB
+    %% COMPUTE & APPLICATION LAYER
+    subgraph CAL["COMPUTE & APPLICATION LAYER (My Control Center)"]
+        direction LR
 
+        NEXT["Next.js App<br/>(React, TS, Server Components)"]
+        BUN["Bun Runtime<br/>(Fast HTTP, Bundler)"]
+
+        NEXT -->|Executes| BUN
+    end
+
+    %% CORE SERVICES
+    CAL --> INNGEST
+    CAL --> POSTGRES
+
+    INNGEST["INNGEST WORKFLOW ENGINE<br/>(Event Bus, Idempotent Retries,<br/>State Reconciliation, Concurrency)"]
+
+    POSTGRES["PostgreSQL<br/>(Core Complex Relations & ACID)"]
+
+    %% INTEGRATIONS
+    INNGEST --> CLERK
+    INNGEST --> APPWRITE
+    INNGEST --> SANITY
+
+    CLERK["Clerk Auth<br/>(Managed Identity,<br/>JWTs, User Metadata)"]
+
+    APPWRITE["Appwrite BaaS<br/>(Storage, Webhooks,<br/>Realtime Events)"]
+
+    SANITY["Sanity CMS<br/>(Content Lake, GROQ,<br/>Fluid Dynamic Copy)"]
+```
 ```
 
 ---
