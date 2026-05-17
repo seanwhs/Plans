@@ -194,11 +194,6 @@ By combining:
 * Sanity for content
 * Inngest for orchestration
 
-you get something more powerful than a web stack:
+I get something more powerful than a web stack:
 
 > A system that can be *run, scaled, and shipped across environments without rewriting its core.*
-
----
-
-
-If you want, I can next extend this into a **“deployment topology diagram” showing web vs desktop vs edge vs worker execution flows”** or convert this into a GitHub-ready technical blog with tighter narrative polish.
