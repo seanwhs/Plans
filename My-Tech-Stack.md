@@ -53,8 +53,32 @@ When designing systems, I rely on a strict mental model of where compute happens
 ```
 
 ---
+```mermaid
+flowchart TB
 
-## 🧠 Mermaid Equivalent Architecture
+subgraph CL["COMPUTE & APPLICATION LAYER (My Control Center)"]
+direction LR
+
+A["Next.js App<br/>(React, TS, Server Comp)"] -->|"Executes"| B["Bun Runtime<br/>(Fast HTTP, Bundler)"]
+end
+
+CL --> C["Clerk Auth<br/>(Managed Identity, JWTs, User Metadata)"]
+CL --> D["Appwrite BaaS<br/>(Storage, Webhooks, Realtime Events)"]
+CL --> E["PostgreSQL<br/>(Core Complex Relations)"]
+
+C --> F["Sanity CMS<br/>(Content Lake, GROQ, Fluid Dynamic Copy)"]
+D --> F
+E --> F
+
+C --> G["Inngest<br/>(Event Workflows, Retries, Scheduling, Durable Functions)"]
+D --> G
+E --> G
+```
+
+
+---
+
+## 🧠 Architecture: Another Representation
 
 This is the same system expressed as a modern graph for documentation, engineering clarity, and GitHub rendering.
 
