@@ -23,6 +23,18 @@ So, I did what any ambitious developer does: I tried to swallow the ocean. On pa
 
 I fell into a brutal, addictive loop:
 
+
+```mermaid
+flowchart LR
+    A[Start Tutorial] --> B[Get Hyper-Excited] --> C[Juggle 12 Abstractions Simultaneously]
+    C --> D[Feel Utterly Overwhelmed]
+    D --> E[Procrastinate]
+    E --> F[Forget Half of It]
+    F --> G[Repeat Forever]
+    G --> B
+```
+
+
 ```
 [Start Tutorial] ➔ [Get Hyper-Excited] ➔ [Juggle 12 Abstractions Simultaneously] 
        ▲                                                                   │
