@@ -21,38 +21,6 @@ When designing systems, I rely on a strict mental model of where compute happens
 
 ## 🧱 Architecture
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               COMPUTE & APPLICATION LAYER (My Control Center)          │
-│                                                                        │
-│   ┌───────────────────────────┐            ┌───────────────────────┐   │
-│   │        Next.js App        │  Executes  │      Bun Runtime      │   │
-│   │ (React, TS, Server Comp)  │───────────>│ (Fast HTTP, Bundler)  │   │
-│   └───────────────────────────┘            └───────────────────────┘   │
-└─────────────────────────────────────┬──────────────────────────────────┘
-                                      │
-            ┌─────────────────────────┼─────────────────────────┐
-            │                         │                         │
-            ▼                         ▼                         ▼
-┌───────────────────────┐   ┌───────────────────────┐   ┌───────────────┐
-│       Clerk Auth      │   │     Appwrite BaaS     │   │   PostgreSQL  │
-│  (Managed Identity,   │   │ (Storage, Webhooks,   │   │ (Core Complex │
-│  JWTs, User Metadata) │   │  Realtime Events)     │   │  Relations)   │
-└───────────────────────┘   └───────────────────────┘   └───────────────┘
-            │                         │                         │
-            └──────────────┬──────────┴──────────────┬─────────┘
-                           │                         │
-                           ▼                         ▼
-                ┌───────────────────────┐   ┌───────────────────────┐
-                │       Sanity CMS      │   │        Inngest        │
-                │ (Content Lake, GROQ,  │   │ (Event Workflows,     │
-                │  Fluid Dynamic Copy)  │   │ Retries, Scheduling,  │
-                └───────────────────────┘   │ Durable Functions)    │
-                                            └───────────────────────┘
-
-```
-
----
 ```mermaid
 flowchart TB
 
@@ -79,8 +47,6 @@ E --> G
 ---
 
 ## 🧠 Architecture: Another Representation
-
-This is the same system expressed as a modern graph for documentation, engineering clarity, and GitHub rendering.
 
 ```mermaid
 flowchart TB
