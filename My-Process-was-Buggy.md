@@ -35,14 +35,6 @@ flowchart LR
 ```
 
 
-```
-[Start Tutorial] ➔ [Get Hyper-Excited] ➔ [Juggle 12 Abstractions Simultaneously] 
-       ▲                                                                   │
-       │                                                                   ▼
-[Repeat Forever] ◄─ [Forget Half of It] ◄─ [Procrastinate] ◄─ [Feel Utterly Overwhelmed]
-
-```
-
 The problem wasn’t my intelligence or my capacity to code. The problem was my process.
 
 ---
