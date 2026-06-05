@@ -44,7 +44,7 @@ It was anti-waste.
 
 For more than two decades, that interpretation worked. Then AI changed the economics entirely.
 
----
+***
 
 ## The Great Shift: Documentation Has a New Audience
 
@@ -56,20 +56,13 @@ Today, documentation often has a new primary consumer: **Large Language Models.*
 
 This seemingly small shift changes everything.
 
-| Traditional Documentation       | AI-Native Documentation          |
-|---------------------------------|----------------------------------|
-| Written for future humans       | Written for present-day AI       |
-| Human interpretation required   | Machine-consumable               |
-| Knowledge preservation          | Context injection                |
-| Read occasionally               | Read constantly                  |
-| Updated when remembered         | Updated continuously             |
-| Lives in Confluence             | Lives in source control          |
-| Passive reference               | Active execution context         |
+- Traditional documentation: Written for future humans, read occasionally, stored in Confluence, passive reference  
+- AI-native documentation: Written for present AI, read constantly, stored in source control, active execution context  
 
 Documentation is no longer simply historical knowledge.  
 It has become **operational knowledge**.
 
----
+***
 
 ## The Vibe Coding Paradox
 
@@ -89,17 +82,116 @@ An LLM is, in many ways, an **amnesiac genius**. It can generate code at extraor
 
 This creates what I call **the Hallucination Tax**:
 
-- More assumptions
-- More architectural drift
-- More code review overhead
-- More rework
+- More assumptions  
+- More architectural drift  
+- More code review overhead  
+- More rework  
 
 The problem usually isn't model quality.  
 The problem is **context quality**.
 
 And context has a familiar name: **Documentation.**
 
----
+***
+
+## Using Cursor for Vibe Coding
+
+Cursor makes the implications of this shift very concrete. It is not just an editor with AI assistance—it is an environment where your documentation directly shapes code generation in real time.
+
+In practice, Cursor turns documentation into **live context injection**.
+
+### How Cursor Actually “Reads” Your Project
+
+Cursor does not understand your system unless you make it explicit. It relies on:
+
+- Files like `SPEC.md`, `PROJECT_CONTEXT.md`, `.cursorrules`
+- Inline code structure and types
+- What you actively select or reference in prompts
+
+Without these, Cursor behaves like a generic code generator. With them, it behaves like a team member who understands your system.
+
+### The Core Vibe Coding Loop in Cursor
+
+A simple but powerful workflow emerges:
+
+1. Load context  
+   “Read SPEC.md and .cursorrules before proceeding.”
+
+2. Define the task  
+   Be explicit about output, scope, and constraints.
+
+3. Constrain aggressively  
+   Include a clear DON'T section.
+
+4. Iterate by refining documentation, not just prompts  
+   Fix root causes in your spec instead of patching outputs.
+
+### Example: Cursor in Action
+
+**Weak Cursor prompt:**
+```text
+Create a leaderboard component.
+```
+
+**Strong Cursor prompt:**
+```text
+Read PROJECT_CONTEXT.md
+
+TASK:
+Create Leaderboard component
+
+OUTPUT:
+components/quiz/Leaderboard.tsx
+
+REQUIREMENTS:
+- Show top 3 scores
+- Use existing Card component
+- Use Zustand selectors
+
+DON'T:
+- Create new stores
+- Modify quiz logic
+- Add dependencies
+```
+
+The difference is not subtle. Cursor stops “guessing” and starts **complying**.
+
+### .cursorrules as an Enforcement Layer
+
+One of Cursor’s most powerful features is `.cursorrules`. This acts as a persistent architecture contract.
+
+```text
+Rules:
+- All state must use Zustand
+- Components must be server-first
+- Use shadcn/ui components only
+
+Forbidden:
+- Raw HTML buttons
+- Direct fetch in components
+```
+
+This dramatically reduces:
+
+- Style inconsistency  
+- Architectural drift  
+- Repeated prompt explanations  
+
+Instead of repeating yourself in every prompt, you define rules once and let Cursor enforce them.
+
+### The Key Insight
+
+Cursor works best when you stop thinking:
+
+> “How do I prompt better?”
+
+And start thinking:
+
+> “What context is missing from my system?”
+
+That shift—from prompt engineering to **context engineering**—is where documentation becomes indispensable.
+
+***
 
 ## Documentation Is Becoming Compiler Input
 
@@ -129,7 +221,7 @@ The second prompt generates dramatically better outcomes because documentation a
 
 Documentation has effectively become **source code for AI behavior**.
 
----
+***
 
 ## Prompt-First Documentation
 
@@ -204,7 +296,7 @@ DON'T:
 
 The best prompts are often defined as much by what they prohibit as what they request.
 
----
+***
 
 ## The Three-Layer Specification Model
 
@@ -233,8 +325,6 @@ Non-Goals:
 - No multiplayer
 ```
 
-*Purpose: Prevent the AI from inventing features.*
-
 ### Layer 2: Architecture Spec  
 **How Should It Be Built?**
 
@@ -256,14 +346,12 @@ Forbidden:
 - Direct fetch calls in components
 ```
 
-*Purpose: Prevent architectural drift.*
-
 ### Layer 3: Task Spec  
 **What Needs To Be Built Right Now?**
 
 The implementation request. Combines Application context + Architecture constraints + immediate objective.
 
----
+***
 
 ## Case Study: Expanding a Math Quiz Application
 
@@ -318,25 +406,20 @@ DON'T:
 
 Now the AI isn't guessing. **It is executing.**
 
----
+***
 
 ## From Specifications to PROJECT_CONTEXT.md
 
 Many teams consolidate everything into a single `PROJECT_CONTEXT.md` — the operating manual for your AI teammate.
 
 Typical structure:
-- Application Spec
+- Application Spec  
 - Architecture Spec  
-- Current Task Brief
+- Current Task Brief  
 
 This file becomes the primary source of truth that every prompt references. Inject the context once and reuse it indefinitely.
 
-**Example SaaS Subscription Dashboard context:**
-- **Application Layer**: Subscription domain model, billing rules, enterprise restrictions, non-goals
-- **Architecture Layer**: Next.js 15, Tailwind, TanStack Query, Zustand
-- **Task Layer**: Implement Upgrade Plan feature, use Sonner for notifications, do not bypass query layer
-
----
+***
 
 ## Documentation as a Learning System
 
@@ -352,17 +435,18 @@ Components remain presentation-only.
 
 The next prompt improves. And the next. Documentation evolves into a living system that continuously trains your AI collaborator.
 
----
+***
 
 ## Documentation Is Becoming a Programming Language
 
 The bottleneck in software development has moved. For decades it was coding speed. Today it is **context quality**.
 
 The teams that thrive in the AI era will not necessarily have the largest models. They will have:
-- Clearer specifications
-- Stronger architectural standards
-- Reusable context
-- Better constraint systems
+
+- Clearer specifications  
+- Stronger architectural standards  
+- Reusable context  
+- Better constraint systems  
 
 Agile optimized human-to-human communication.  
 **AI-native engineering optimizes human-to-LLM communication.**
