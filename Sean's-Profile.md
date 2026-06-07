@@ -1,101 +1,15 @@
-## 1. Ultra-Short Version
+### **Long Profile Version** (for LinkedIn About, website, etc.)
 
-> **About the Author:** Sean Wong is an enterprise architect turned independent full-stack developer, consultant, and active technical trainer based in Singapore. Driven by an intense ethos of lifelong learning, his expertise spans modern web stacks (React, Next.js, TypeScript), secure data architectures, and practical AI engineering—always balancing automated tools with manual mastery.
+Sean Wong is an enterprise architect turned independent full-stack developer, consultant, and ACTA-certified technical trainer based in Singapore. He specializes in modern web platforms, cloud-native architectures, AI-native engineering, and secure digital transformation. Combining decades of enterprise experience with hands-on AI engineering, Sean helps organizations align business intent, system behavior, and operational reality while governing machine-generated software through strong architectural thinking, systems design, and engineering judgment.
 
----
+A digital transformation leader, Sean has designed, architected, and implemented improved or new business models, digitized assets, and leveraged digital technologies — including cloud computing, DevSecOps, data analytics, RPA, and AI-augmented solutions — to optimize processes, reduce cost-to-serve, accelerate innovation, win new clients, and build new businesses. He excels at decomposing complex challenges, crafting innovative solutions, and building the agility required to meet rapidly evolving business requirements and user preferences.
 
-## 2. Long Version (PDF / Resume / Proposal Version)
+Throughout his career, he has delivered high-impact outcomes such as architecting critical manufacturing systems that prevented multi-million-dollar downtime, leading performance tuning initiatives that achieved 400% improvement, launching fintech and e-commerce platforms, and contributing to winning triple-digit million-dollar telco projects. He brings deep expertise in hybrid cloud architectures (AWS, GCP), observability (OpenTelemetry, Splunk), Domain-Driven Design, Security by Design, and end-to-end solution delivery.
 
-### **Sean Wong**
-
-**Principal Full-Stack Developer, Consultant & Technical Trainer** *Singapore* | *Mobile: +65 9026 4976* | *Email: seanwhs@hotmail.com* | *LinkedIn: [linkedin.com/in/Seanwhs*](https://www.google.com/search?q=https://linkedin.com/in/Seanwhs)
+Sean is passionate about facilitating world-class digital transformation in Singapore companies and grooming the next generation of digital leaders through consulting and technical training.
 
 ---
 
-#### **Professional Profile**
+### **Short Profile Version** (one concise paragraph — fits easily on one slide)
 
-A veteran digital transformation leader and enterprise systems architect who bridges high-level business strategy with deep, modern full-stack execution. With a career spanning enterprise infrastructure engineering, cloud architecture, and cybersecurity , Sean works independently to help organizations build secure, resilient, and highly performant digital products.
-
-Driven by an intense commitment to **lifelong learning**, Sean maintains a vast technical baseline across modern web engineering, data engineering, MLOps, and AI orchestration. He combines decades of enterprise judgment with modern, fast-executing frameworks to act as a ruthless editor, architect, and guardian of system simplicity.
-
-#### **Core Technical Sandbox & Stack**
-
-* **Full-Stack Web Apps:** React, Next.js (App Router), Node.js, TypeScript, and BunJS.
-* **UI & Styling Primitives:** Tailwind CSS, shadcn/ui.
-* **Data & Content Pipelines:** Postgres, MongoDB, Sanity Headless CMS.
-* **Identity & Cloud Infrastructure:** Clerk Auth, AWS (ECS/VPC), Google Cloud Platform (GCP).
-* **Architecture Patterns:** Domain-Driven Design (DDD), Event-Driven Architecture, Microservices, Reactive Architecture, and SOLID principles.
-
-
-
-#### **Key Career Accomplishments**
-
-* **Multi-Million Dollar Cost Avoidance:** Architected and project-managed the deployment of a key manufacturing system that prevented weeks of catastrophic downtime.
-* **Performance Optimization:** Led an infrastructure and storage performance tuning initiative that yielded a **400% performance improvement** for a major telecommunications provider.
-* **DevSecOps & Cloud Migration:** Directed enterprise cloud engineering setups (AWS/GCP), successfully migrating core container workloads from OpenShift to AWS ECS with automated telemetry, security logging, and distributed observability.
-
-
-
----
-
-#### **Continuous Upskilling & Technical Credentials**
-
-
-##### **1. Generative AI, LLMOps & Machine Learning**
-
-* **AI Systems & Prompting:** *Associate AI Engineer for Data Scientists*, *Developing AI Systems with the OpenAI API*, *Working with Llama 3*, and *ChatGPT Prompt Engineering for Developers*.
-* **MLOps & Production Models:** *MLOps Deployment & Life Cycling*, *Developing Machine Learning Models for Production*, and *Automated MLOps* (DataCamp / IBM).
-* **Deep Learning Engines:** Hands-on model building certifications in **PyTorch**, **Keras**, and **TensorFlow**.
-
-
-
-##### **2. Full-Stack Web Development & Software Architecture**
-
-* **Modern Web Frameworks:** Advanced certifications in *React Foundations*, *React Design Patterns*, *Building Modern Web Apps with Vite/Next.js*, and *Learning Functional Programming with JavaScript ES6*.
-* **Software Architecture:** *Microservices Architecture*, *Event-Driven Architecture*, *Reactive Architecture (DDD, CQRS & Event Sourcing)*, and *The Complete Guide to Becoming a Software Architect*.
-
-
-
-##### **3. Data Engineering & Distributed Systems**
-
-* **Database Design & Optimization:** Professional specializations in *PostgreSQL Summary Stats & Window Functions*, *Improving Query Performance*, and *Relational Database Design*.
-* **Data Pipelines & Cloud Data Warehouses:** Certified across *DataOps Methodologies*, *ETL/ELT pipelines in Python*, *Introduction to dbt*, *Snowflake Data Modeling*, and *BigQuery*.
-
-
-
-##### **4. Cybersecurity & DevSecOps**
-
-* **Enterprise Security Standards:** *Certified Ethical Hacker (CEH)*, *Computer Hacking Forensic Investigator (CHFI)*, and *IBM Security Zero Trust Principles*.
-* **AppSec & Threat Modeling:** Specialized training in *The Art of Threat Modeling*, *OWASP Top 10 Web Application Security*, and *Building an Application Security Program*.
-
-
-
-##### **5. Product, Agile & Technical Instruction**
-
-* **Product Management:** Aha! Product Management Professional Certificate, *Technical Product Management*, and *API Product Manager*.
-* **Agile Frameworks:** Extensive credentials in *Scrum Master Primer*, *Agile User Stories*, and *SCRUM vs. LEAN Methodologies*.
-* **Adult Training:** *Advanced Certificate in Training and Assessment (ACTA)* issued by Workforce Singapore—qualifying professional delivery of technical corporate labs and instructional training programs.
-
-
-
----
-
-#### **Professional History**
-
-* **Independent Full-Stack Developer, Trainer & Consultant** | *Present*
-* **QuestGlobal** – *Principal Architect* 
-* **EcoWorld Development Singapore** – *General Manager / Technical Contributions* 
-* **Accenture Singapore** – *Cyber Security Consultant* 
-* **Dynasafe Technologies Inc, China** – *Technical Director* 
-* **Huawei, Asia South** – *Senior Business and Network Consultant* 
-
-
-
-#### **Education**
-
-* **Master of Business Administration (MBA)** – University of Southern Queensland 
-* **Bachelor of Information Technology (BIT)** – University of Southern Queensland 
-
-
-
-2. **Establishes Authority as a Trainer:** Highlighting your **ACTA certification** right alongside your tech stack makes you incredibly attractive to corporations who need someone to help their existing engineering teams transition safely into an AI-augmented or modern web environment.
+Sean Wong is an Enterprise Architect, AI-Native Full-Stack Developer, and ACTA-certified Technical Trainer based in Singapore. With decades of experience in digital transformation, cloud-native architectures, and secure systems delivery, he helps organizations align business intent with system behavior and operational reality through strong architectural thinking, engineering judgment, and AI-augmented solutions.
