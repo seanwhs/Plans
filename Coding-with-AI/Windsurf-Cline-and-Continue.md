@@ -1,227 +1,107 @@
 # Beyond Vibecoding: Designing an AI Co-Developer Stack for the Modern Web
-**(JS/TS, React, Next.js, Inngest, shadcn/ui, Clerk, Sanity, GSAP, Bun + Local AI)**
 
-In 2026, vibecoding is no longer experimental — it is operational. The difference between prototypes and production systems is no longer how fast you can generate code. It is how well you **structure collaboration with AI inside a real-world stack**.
+**(JS/TS, React, Next.js, Inngest, shadcn/ui, Clerk, Sanity, GSAP, Bun + Cloud-Native AI)**
 
-If you are working with **TypeScript, React, Next.js (App Router), TailwindCSS, shadcn/ui, Clerk, Inngest, PostgreSQL, Sanity CMS, GSAP, and Bun**, your challenge is not tooling access. Your challenge is **orchestration**.
+In 2026, vibecoding is no longer experimental — it is operational. The difference between prototypes and production systems is no longer how fast you can generate code; it is how well you **structure collaboration with AI inside a real-world stack**.
 
-AI becomes powerful only when it understands:
-- Your component patterns.
-- Your data flow.
-- Your backend contracts.
-- Your event-driven architecture.
+---
 
-This post reframes AI not as a feature — but as a **co-developer embedded into your stack**.
+## 1. Mapping AI Roles to Your Stack
 
-***
-## Your Stack as a System (Not a Toolbox)
+Instead of choosing one AI tool, think in terms of **responsibility layers** powered by a multi-model cloud strategy.
 
-Before choosing AI tools, it's critical to understand the shape of your stack:
+* **Windsurf → Frontend Velocity Layer:** Best for React components, Tailwind, and GSAP. It excels at local UI iteration.
+* **Continue.dev → Architecture & Governance:** Acts as your governor. Use `.continue/checks/` to enforce standards (e.g., "All DB access must go through Drizzle").
+* **Cline → Event & Workflow Automation:** The "Agent." Perfect for Inngest durable functions, multi-step flows, and stateful orchestration.
 
-| Layer       | Components |
-|-------------|------------|
-| **Frontend** | React + Next.js App Router, TailwindCSS, shadcn/ui, GSAP |
-| **Auth**     | Clerk (fully managed identity) |
-| **Backend**  | Next.js server actions + Inngest (event-driven workflows) |
-| **Database** | PostgreSQL |
-| **Content**  | Sanity CMS |
-| **Runtime**  | Bun (fast dev + tooling layer) |
+---
 
-This is **not** a simple CRUD stack. It is:
-- Component-driven.
-- Event-oriented.
-- API-light (server actions instead of REST).
-- Highly composable.
+## 2. The Cloud-First Multi-Model Strategy
 
-Your AI must operate across all these layers **without breaking conventions**.
+Stop being tethered to local hardware. By using **OpenRouter** as your unified gateway, you can route tasks to the best free-tier models from **Google, DeepSeek, and Groq**.
 
-***
-## Mapping AI Roles to Your Stack
+### How to Obtain API Keys
 
-Instead of choosing one AI tool, think in terms of **responsibility layers**.
+1. **OpenRouter:** Go to [openrouter.ai](https://openrouter.ai/), sign in, and generate an API key from your dashboard. This is your "one key to rule them all."
+2. **Google AI Studio (Optional):** If you want to use Gemini directly (free tier), visit [aistudio.google.com](https://aistudio.google.com/) to generate a key.
+3. **Groq:** Visit [console.groq.com](https://console.groq.com/) to get a key for high-speed DeepSeek inference.
 
-### 1. Windsurf → Frontend Velocity Layer
-**What it does best:**  
-Windsurf excels when working inside:
-- React components.
-- Tailwind styling.
-- shadcn/ui composition.
-- GSAP animations.
+### Recommended Model Strategy (via OpenRouter)
 
-It understands local context extremely well, ideal for:
-- Generating reusable UI components.
-- Refactoring JSX/TSX structures.
-- Converting designs into Tailwind + shadcn patterns.
-- Iterating animation timelines with GSAP.
+| Purpose | Model | Why |
+| --- | --- | --- |
+| **Autocomplete** | `google/gemini-flash-1.5` | Huge context window for full-stack awareness. |
+| **Chat/Refactor** | `deepseek/deepseek-chat` | Best-in-class coding logic and logic density. |
+| **Agentic Reasoning** | `google/gemini-2.0-flash-thinking` | Superior at planning complex Inngest workflows. |
 
-**Example use case:**  
-You prompt:
-> "Create a dashboard card component using shadcn with loading skeleton and Clerk user data."
+**In Continue (`~/.continue/config.json`):**
 
-Windsurf can:
-- Infer your design system.
-- Pull existing component patterns.
-- Generate consistent UI without manual file feeding.
+```json
+{
+  "models": [
+    {
+      "title": "OpenRouter: Gemini Flash",
+      "provider": "openai",
+      "model": "google/gemini-flash-1.5",
+      "apiKey": "YOUR_OPENROUTER_KEY",
+      "apiBase": "https://openrouter.ai/api/v1"
+    },
+    {
+      "title": "OpenRouter: DeepSeek V3",
+      "provider": "openai",
+      "model": "deepseek/deepseek-chat",
+      "apiKey": "YOUR_OPENROUTER_KEY",
+      "apiBase": "https://openrouter.ai/api/v1"
+    }
+  ]
+}
 
-**Key insight:**  
-**Windsurf is strongest where speed + context = UI output.**
-
-### 2. Continue.dev → Architecture and Standards Layer
-**What it does best:**  
-Your stack has multiple "opinionated zones":
-- Server actions vs API routes.
-- Inngest event design.
-- Clerk auth boundaries.
-- PostgreSQL access patterns.
-- Sanity data fetching.
-
-Without guardrails, AI will drift. This is where Continue becomes essential.
-
-**You define rules like:**
-- "All DB access must go through a typed data layer."
-- "Use server actions for mutations, never client fetch."
-- "Inngest handles async workflows, not API routes."
-- "All components must be typed and use shadcn primitives."
-
-These go into:
-```
-.continue/checks/
 ```
 
-Now AI outputs are:
-- Consistent.
-- Enforceable.
-- Reviewable.
+---
 
-**Example:**  
-When generating a mutation, Continue can enforce:
-- Clerk auth validation.
-- Server action usage.
-- Proper TypeScript typing.
-- Logging hooks for Inngest triggers.
+## 3. The AI Co-Developer Contract
 
-**Key insight:**  
-**Continue turns your stack into a governed system instead of AI chaos.**
+Save this as `PROMPTS.md` in your project root. This file is the single source of truth for Windsurf, Continue, and Cline.
 
-### 3. Cline → Event and Workflow Automation Layer
-**What it does best:**  
-Cline (open-source AI coding agent) fits perfectly with **Inngest**, bringing:
-- Background jobs.
-- Event-driven flows.
-- Retry logic.
-- Async orchestration.
+```markdown
+# PROMPTS.md – AI Co‑Developer Contract for Next.js + Inngest
+**Purpose:** This file is the single source of truth for your AI co-developer. Before generating or refactoring code, the AI must read this file and follow all conventions.
 
-Cline excels at agentic, multi-step work. It can:
-- Read a feature spec.
-- Create Inngest functions.
-- Wire events to database updates.
-- Run terminal commands, tests, and validation loops.
-- Iterate until the workflow works.
+---
 
-**Example use case:**  
-You prompt:
-> "Build a user onboarding flow."
+## 1. Project Snapshot
+Stack: Next.js 15 (App Router), TypeScript, React 19, TailwindCSS, shadcn/ui.
+Backend: Server Actions, PostgreSQL (Drizzle).
+Auth: Clerk (middleware, sessions, orgs).
+Event/Workflow: Inngest.
+Runtime: Bun.
 
-Cline can:
-- Create Clerk webhook handler.
-- Emit Inngest events.
-- Process onboarding steps asynchronously.
-- Update PostgreSQL.
-- Sync content with Sanity if needed.
-- Run tests and fix issues in a Plan → Act loop.
+## 2. Architectural Rules
+- Prefer Server Components; use 'use client' only when necessary.
+- No direct DB access in Client Components.
+- All mutations must be auditable via Inngest events.
+- Enforce Clerk auth validation in all Server Actions.
 
-**Key insight:**  
-**Cline is strongest where tasks are multi-step, cross-layer, and stateful.**
+## 3. Inngest Integration
+- Inngest functions handle all multi-step/background work.
+- Server Actions perform immediate DB work and emit events.
+- All Inngest events must be Zod-typed in `lib/inngest/events.ts`.
 
-***
-## Local AI + Bun + Ollama: Your Efficiency Multiplier
+## 4. AI Behavior
+- Always start with a PLAN: Summarize intent, list file changes, and wait for confirmation.
+- Prefer incremental changes.
+- If in doubt, ask to clarify the data contract.
 
-Given your preference for lightweight and local workflows, this setup becomes extremely powerful.
-
-Running **Ollama** alongside **Bun** gives you:
-- Blazing-fast iteration loops.
-- No API costs for daily coding.
-- Full privacy for your business logic and proprietary patterns.
-
-### Recommended Local Models
-
-| Purpose              | Model                        | Why |
-|----------------------|------------------------------|-----|
-| **Autocomplete**     | `qwen2.5-coder:1.5b` or `3b` | Ultra-fast, low RAM, excellent for inline completions |
-| **Chat/Refactor**    | `qwen2.5-coder:7b`           | Best balance of speed and capability for daily dev |
-| **High-End Reasoning / Agentic** | `deepseek-r1:14b` or `qwen2.5-coder:14b` | Strong chain-of-thought and complex workflow planning |
-
-**In Continue (`~/.continue/config.yaml` or `config.json`):**
-```yaml
-models:
-  - name: Fast Autocomplete
-    provider: ollama
-    model: qwen2.5-coder:3b
-    roles: [autocomplete]
-
-  - name: Smart Chat/Refactor
-    provider: ollama
-    model: qwen2.5-coder:7b
-    roles: [chat, edit, apply, summarize]
-
-  - name: Reasoning Engine (Cline)
-    provider: ollama
-    model: deepseek-r1:14b
-    roles: [chat]
 ```
 
-**Use cases:**
-- Refactoring TypeScript types.
-- Generating Tailwind classes.
-- Writing server actions.
-- Debugging Bun scripts.
-- Running full Cline agentic sessions locally.
+---
 
-**Pro Tip:** Use local models for **execution** and fast feedback. Fall back to Gemini/Groq via cloud when you need extra reasoning power.
+## 4. A Realistic Hybrid Workflow
 
-***
-## Setting Up Your Environment with Ollama and Google Gemini
+| Layer | Tool | Preferred AI Route |
+| --- | --- | --- |
+| **Frontend Velocity** | Windsurf | Gemini 1.5 Flash |
+| **Architecture / Governance** | Continue.dev | DeepSeek V3 |
+| **Complex Workflows** | Cline | Gemini 2.0 Thinking |
 
-*(This section can remain mostly as-is, or let me know if you want it updated too.)*
-
-***
-## Structuring Your AI Onboarding (Critical Step)
-
-Your stack is opinionated. Your AI must be too.
-
-Create a `PROMPTS.md` in the project root with your conventions (App Router, server actions, Clerk, Inngest, shadcn, strict TypeScript, etc.).
-
-This file becomes the shared knowledge base for **both Continue and Cline**.
-
-***
-## Custom Commands in Continue + Cline Rules
-
-Add senior developer personas and commands in Continue.  
-Create a `.clinerules` file at the root for Cline-specific instructions (Plan-first behavior, approval workflow, Inngest patterns, etc.).
-
-***
-## A Realistic Hybrid Workflow
-
-| Layer                  | Tool          | Purpose |
-|------------------------|---------------|---------|
-| **Daily Work / Frontend** | Windsurf     | Build UI, iterate fast, refactor components |
-| **Architecture & Governance** | Continue.dev | Enforce patterns, standards, and consistency |
-| **Complex Execution & Workflows** | Cline     | Implement Inngest flows, multi-step features, agentic tasks |
-| **Local Backbone**     | Ollama + Bun  | Fast, private, cost-free iteration |
-
-***
-## The Real Shift: From Coding to System Design
-
-The biggest upgrade is not AI capability — it is **mindset**.
-
-You are no longer just writing code. You are:
-- Designing constraints.
-- Defining systems.
-- Delegating execution.
-
-AI becomes effective only when:
-- Your architecture is clear.
-- Your rules are explicit.
-- Your stack is consistent.
-
-At that point, vibecoding stops being "vibes" and becomes **structured, repeatable engineering**.
