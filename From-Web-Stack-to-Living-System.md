@@ -33,58 +33,60 @@ At the center of my system is a simple idea:
 
 ```mermaid
 flowchart TB
-subgraph EDGE["EDGE LAYER"]
-CDN["CDN / Edge Network"]
-Middleware["Next.js Middleware"]
-ClerkEdge["Clerk Auth (Edge JWT Validation)"]
-CDN --> Middleware --> ClerkEdge
-end
-subgraph WEB["WEB LAYER"]
-Next["Next.js App (React + RSC)"]
-UI["Tailwind + shadcn/ui + GSAP"]
-BunWeb["Bun Runtime (SSR + API)"]
-ClerkEdge --> Next --> UI --> BunWeb
-end
-subgraph DATA["DATA LAYER"]
-PG[(PostgreSQL)]
-Appwrite[(Appwrite Storage + Realtime)]
-Sanity[(Sanity CMS)]
-Next --> PG
-Next --> Appwrite
-Next --> Sanity
-end
-subgraph WORKERS["WORKER LAYER"]
-Inngest["Inngest Event Engine"]
-Jobs["Bun / Serverless Workers"]
-Next --> Inngest
-Appwrite --> Inngest
-PG --> Inngest
-Sanity --> Inngest
-Inngest --> Jobs
-Jobs --> PG
-Jobs --> Appwrite
-Jobs --> Sanity
-end
-subgraph DESKTOP["DESKTOP LAYER"]
-Binary["Bun Compiled Binary"]
-WebView["Native WebView Shell"]
-Local["Local Next.js Runtime"]
-BunWeb --> Binary --> WebView --> Local
-Local --> PG
-Local --> Appwrite
-Local --> Sanity
-Local --> Inngest
-end
-subgraph AI["AI CO-DEVELOPER LAYER"]
-Windsurf["Windsurf (UI Velocity)"]
-Continue["Continue.dev (Architecture)"]
-Cline["Cline (Agentic Workflows)"]
-Cloud["Gemini + Groq + OpenRouter"]
-AI -.->|"Guides & Improves"| WEB
-AI -.->|"Guides & Improves"| WORKERS
-AI -.->|"Guides & Improves"| DESKTOP
-AI -.->|"Guides & Improves"| EDGE
-end
+    subgraph EDGE["EDGE LAYER"]
+        CDN["CDN / Edge Network"]
+        Middleware["Next.js Middleware"]
+        ClerkEdge["Clerk Auth (Edge JWT Validation)"]
+        CDN --> Middleware --> ClerkEdge
+    end
+    subgraph WEB["WEB LAYER"]
+        Next["Next.js App (React + RSC)"]
+        UI["Tailwind + shadcn/ui + GSAP"]
+        BunWeb["Bun Runtime (SSR + API)"]
+        ClerkEdge --> Next --> UI --> BunWeb
+    end
+    subgraph DATA["DATA LAYER"]
+        PG[(PostgreSQL)]
+        Appwrite[(Appwrite Storage + Realtime)]
+        Sanity[(Sanity CMS)]
+        Next --> PG
+        Next --> Appwrite
+        Next --> Sanity
+    end
+    subgraph WORKERS["WORKER LAYER"]
+        Inngest["Inngest Event Engine"]
+        Jobs["Bun / Serverless Workers"]
+        Next --> Inngest
+        Appwrite --> Inngest
+        PG --> Inngest
+        Sanity --> Inngest
+        Inngest --> Jobs
+        Jobs --> PG
+        Jobs --> Appwrite
+        Jobs --> Sanity
+    end
+    subgraph DESKTOP["DESKTOP LAYER"]
+        Binary["Bun Compiled Binary"]
+        WebView["Native WebView Shell"]
+        Local["Local Next.js Runtime"]
+        BunWeb --> Binary --> WebView --> Local
+        Local --> PG
+        Local --> Appwrite
+        Local --> Sanity
+        Local --> Inngest
+    end
+    subgraph AI["AI CO-DEVELOPER LAYER"]
+        Windsurf["Windsurf (UI Velocity)"]
+        Continue["Continue.dev (Architecture)"]
+        Cline["Cline (Agentic Workflows)"]
+        Cloud["Gemini + Groq + OpenRouter"]
+    end
+
+    Windsurf -.->|"Guides & Improves"| WEB
+    Continue -.->|"Guides & Improves"| WEB
+    Cline -.->|"Guides & Improves"| WORKERS
+    Cline -.->|"Guides & Improves"| DESKTOP
+    AI -.->|"Embedded Intelligence"| EDGE
 ```
 
 ---
@@ -111,56 +113,56 @@ Instead, I design around a more honest question:
 
 ```mermaid
 flowchart TB
-subgraph EDGE["EDGE FAILURES"]
-CDN["Latency spikes / regional outage"]
-Middleware["Auth blocking / routing bugs"]
-Clerk["JWT validation failure"]
-end
-subgraph WEB["WEB FAILURES"]
-Next["SSR crash / hydration mismatch"]
-UI["Tailwind / shadcn / GSAP issues"]
-Bun["Runtime crash / memory leak"]
-end
-subgraph DATA["DATA FAILURES"]
-PG["Deadlocks / connection exhaustion"]
-Appwrite["Storage + webhook delays"]
-Sanity["Schema mismatch / fetch failure"]
-end
-subgraph WORKERS["WORKER FAILURES"]
-Inngest["Event backlog / retry lag"]
-Jobs["Partial execution / timeouts"]
-end
-subgraph DESKTOP["DESKTOP FAILURES"]
-Binary["Broken build / version mismatch"]
-WebView["Rendering engine crash"]
-Local["Port conflict / sync drift"]
-end
-subgraph AI["AI CO-DEVELOPER"]
-AIHelp["AI Diagnosis & Fix Generation"]
-end
+    subgraph EDGE["EDGE FAILURES"]
+        CDN["Latency spikes / regional outage"]
+        Middleware["Auth blocking / routing bugs"]
+        Clerk["JWT validation failure"]
+    end
+    subgraph WEB["WEB FAILURES"]
+        Next["SSR crash / hydration mismatch"]
+        UI["Tailwind / shadcn / GSAP issues"]
+        Bun["Runtime crash / memory leak"]
+    end
+    subgraph DATA["DATA FAILURES"]
+        PG["Deadlocks / connection exhaustion"]
+        Appwrite["Storage + webhook delays"]
+        Sanity["Schema mismatch / fetch failure"]
+    end
+    subgraph WORKERS["WORKER FAILURES"]
+        Inngest["Event backlog / retry lag"]
+        Jobs["Partial execution / timeouts"]
+    end
+    subgraph DESKTOP["DESKTOP FAILURES"]
+        Binary["Broken build / version mismatch"]
+        WebView["Rendering engine crash"]
+        Local["Port conflict / sync drift"]
+    end
+    subgraph AI["AI CO-DEVELOPER"]
+        AIHelp["AI Diagnosis & Fix Generation"]
+    end
 
-Clerk --> Next
-Next --> UI
-UI --> Bun
-Bun --> PG
-Bun --> Appwrite
-Bun --> Sanity
-PG --> Inngest
-Appwrite --> Inngest
-Sanity --> Inngest
-Inngest --> Jobs
-Jobs --> PG
-Jobs --> Appwrite
-Jobs --> Sanity
-Binary --> WebView --> Local
-Local --> PG
-Local --> Inngest
+    Clerk --> Next
+    Next --> UI
+    UI --> Bun
+    Bun --> PG
+    Bun --> Appwrite
+    Bun --> Sanity
+    PG --> Inngest
+    Appwrite --> Inngest
+    Sanity --> Inngest
+    Inngest --> Jobs
+    Jobs --> PG
+    Jobs --> Appwrite
+    Jobs --> Sanity
+    Binary --> WebView --> Local
+    Local --> PG
+    Local --> Inngest
 
-AIHelp -.->|"Analyzes logs & suggests fixes"| EDGE
-AIHelp -.->|"Analyzes logs & suggests fixes"| WEB
-AIHelp -.->|"Analyzes logs & suggests fixes"| DATA
-AIHelp -.->|"Analyzes logs & suggests fixes"| WORKERS
-AIHelp -.->|"Analyzes logs & suggests fixes"| DESKTOP
+    AIHelp -.->|"Analyzes logs & suggests fixes"| EDGE
+    AIHelp -.->|"Analyzes logs & suggests fixes"| WEB
+    AIHelp -.->|"Analyzes logs & suggests fixes"| DATA
+    AIHelp -.->|"Analyzes logs & suggests fixes"| WORKERS
+    AIHelp -.->|"Analyzes logs & suggests fixes"| DESKTOP
 ```
 
 ---
@@ -185,32 +187,31 @@ The AI layer turns every failure, feature request, or architectural drift into a
 
 ```mermaid
 flowchart TB
-Event["Trigger Event"]
-Inngest["Inngest Engine"]
-Retry["Retry with Backoff"]
-Replay["Event Replay"]
-Compensate["Compensating Actions"]
-AI["AI Co-Developer Layer"]
-PG["Postgres Repair"]
-Appwrite["Storage Re-sync"]
-Sanity["Content Rebuild"]
-Next["Cache Revalidation"]
-Clerk["Identity Sync"]
+    Event["Trigger Event"]
+    Inngest["Inngest Engine"]
+    Retry["Retry with Backoff"]
+    Replay["Event Replay"]
+    Compensate["Compensating Actions"]
+    AI["AI Co-Developer Layer"]
+    PG["Postgres Repair"]
+    Appwrite["Storage Re-sync"]
+    Sanity["Content Rebuild"]
+    Next["Cache Revalidation"]
+    Clerk["Identity Sync"]
 
-Event --> Inngest
-Inngest --> Retry
-Retry --> Replay
-Replay --> Compensate
-Compensate --> PG
-Compensate --> Appwrite
-Compensate --> Sanity
-Compensate --> Next
-Compensate --> Clerk
+    Event --> Inngest
+    Inngest --> Retry
+    Retry --> Replay
+    Replay --> Compensate
+    Compensate --> PG
+    Compensate --> Appwrite
+    Compensate --> Sanity
+    Compensate --> Next
+    Compensate --> Clerk
 
-AI -.->|"Root cause analysis + code suggestions"| Inngest
-AI -.->|"Generates fixes, tests & refactors"| Retry
-AI -.->|"Generates fixes, tests & refactors"| Compensate
-AI -.->|"Reviews & improves recovery logic"| PG
+    AI -.->|"Root cause analysis + code suggestions"| Inngest
+    AI -.->|"Generates fixes, tests & refactors"| Retry
+    AI -.->|"Generates fixes, tests & refactors"| Compensate
 ```
 
 ---
@@ -237,7 +238,7 @@ This layer transforms the entire system from merely resilient to **self-improvin
 
 One of the most interesting extensions of this system is using **Bun as a compiler for desktop applications**. AI helps maintain consistency between web and desktop surfaces (shared components, logic, and styling).
 
-*(Rest of the Desktop section remains as in the original.)*
+*(The rest of the Desktop section and the final sections remain unchanged from your original.)*
 
 ---
 # 🧩 What This Architecture Actually Becomes
