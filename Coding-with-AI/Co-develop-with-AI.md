@@ -1,8 +1,8 @@
-**🧠 Beyond Vibecoding: Build a Professional Co-Developer Relationship with AI (for Free)**
+# **🧠 Beyond Vibecoding: Build a Professional Co-Developer Relationship with AI (for Free)**
 
 **A Complete, Step-by-Step Guide to Discipline, Token Efficiency, Sovereign Control, and Shipping Better Software with AI**
 
-### 🧠 Production-Grade AI Pair Programming System  
+## 🧠 Production-Grade AI Pair Programming System  
 **(Continue.dev + Gemini CLI + VS Code + Git-Gated Engineering Workflow)**
 
 **⚠️ Core Principle**  
@@ -10,7 +10,7 @@ This system is **not** autonomous coding. It is a deterministic, human-governed 
 
 The AI never owns execution. It operates strictly as a bounded collaborator inside a well-engineered workflow — behaving like a senior engineering pair, not an agentic developer.
 
-### 🧩 Non-Negotiable Engineering Properties  
+## 🧩 Non-Negotiable Engineering Properties  
 Every change must satisfy **all four** properties simultaneously:
 
 - **Explainable** — Reasoning is transparent and fully inspectable  
