@@ -1,377 +1,204 @@
-# 🧠 OpenCode AI-Native Guide
+# 🧠 OpenCode Guide
 
 ## A Multi-Agent, Multi-Skill Cognitive Operating System for Software Engineering
 
 OpenCode is not an AI coding assistant.
 
-It is a **governed engineering runtime system** that combines:
+It is a **governed engineering runtime system** that transforms software development into a structured cognitive architecture composed of:
 
 * structured reasoning (Agents)
 * reusable execution capabilities (Skills)
 * domain truth (Project Knowledge)
 * CLI-native orchestration
-* Plan → Build execution separation
-
-It operates as a **context-aware cognitive OS layered directly over a codebase**.
+* strict Plan → Build execution separation
 
 ---
 
-# ⚙️ Core Principle: Plan vs Build Separation
+# 🧭 SYSTEM DEFINITION
 
-OpenCode enforces a strict separation between **thinking** and **execution**.
+OpenCode operates as a:
+
+> **context-aware cognitive operating system layered directly over a codebase**
+
+It replaces prompt-based workflows with a **deterministic engineering cognition system**.
+
+---
+
+# ⚙️ CORE PRINCIPLE: PLAN vs BUILD SEPARATION
+
+OpenCode enforces a strict separation between:
+
+* **thinking (PLAN)**
+* **execution (BUILD)**
 
 ---
 
 ## 🧭 PLAN MODE — Cognitive Layer
 
-PLAN mode is the **analysis, reasoning, and architectural decision layer**.
-
 Used for:
 
 * system design
-* requirement decomposition
-* codebase understanding
+* decomposition
+* architecture reasoning
 * dependency analysis
 * tradeoff evaluation
-* ADR creation
 * feasibility analysis
+* ADR creation
 
 ### Properties
 
 * read-only
 * no mutation
-* no execution
 * exploration-first
 * reasoning-dominant
 
-> PLAN = decide correctly
+> 🧠 PLAN = decide correctly before acting
 
 ---
 
 ## 🛠 BUILD MODE — Execution Layer
 
-BUILD mode is the **implementation and mutation layer**.
-
 Used for:
 
-* code changes
-* feature implementation
-* refactors
-* bug fixes
-* terminal execution
-* system updates
+* implementation
+* refactoring
+* debugging
+* system mutation
+* shell execution
+* integration tasks
 
 ### Properties
 
 * write-enabled
 * filesystem mutation allowed
-* shell execution allowed
+* shell execution allowed (`!`)
 * constrained by PLAN output
 
-> BUILD = execute correctly
+> 🛠 BUILD = execute correctly
 
 ---
 
-## 🧠 Core Execution Equation
+## 🧠 CORE EXECUTION EQUATION
 
-```text
-PLAN  → understand + decide
-BUILD → implement + apply
+```text id="plan_build_eq"
+PLAN  → understand + decide + structure intent
+BUILD → implement + mutate + apply decisions
 ```
 
-This enforces:
+---
 
-* cognitive correctness (PLAN)
-* execution correctness (BUILD)
+# 🏗 SYSTEM ARCHITECTURE OVERVIEW
+
+| Layer             | Scope       | Responsibility                     |
+| ----------------- | ----------- | ---------------------------------- |
+| Global Agents     | System-wide | How AI thinks (reasoning layer)    |
+| Global Skills     | System-wide | How AI executes (capability layer) |
+| Project Knowledge | Repo-level  | What is true in system (truth)     |
 
 ---
 
-# 📁 SYSTEM ARCHITECTURE OVERVIEW
+# 📍 GLOBAL CONFIGURATION LAYERS
 
-| Layer             | Scope       | Responsibility         |
-| ----------------- | ----------- | ---------------------- |
-| Global Agents     | System-wide | How AI thinks          |
-| Global Skills     | System-wide | How AI executes        |
-| Project Knowledge | Repo-level  | What is true in system |
-
----
-
-# 📍 GLOBAL CONFIG LOCATIONS
-
-## Agents
+## Agents Directory
 
 ```text
 ~/.config/opencode/agent/
 ```
 
-## Skills
+## Skills Directory
 
 ```text
 ~/.config/opencode/skill/
 ```
 
-Each file = **one autonomous capability unit**
+Each file = **atomic cognitive unit**
 
 ---
 
 # 🧠 LAYER 1 — GLOBAL AGENTS (THINKING SYSTEM)
 
-Agents define **how reasoning works across all repositories**.
+Agents define **how reasoning behaves globally**.
 
-Each agent is a separate file.
+They are not tools.
 
----
-
-## 📄 plan.md
-
-Defines scope, requirements, and execution roadmap.
-
-Focus:
-
-* requirement breakdown
-* scope definition
-* milestone planning
-* risk identification
-* execution strategy
+They are **persistent cognitive policies**.
 
 ---
 
-## 📄 analyze.md
+## Agent Responsibilities Overview
 
-Performs system decomposition and reasoning.
-
-Focus:
-
-* feasibility analysis
-* architecture breakdown
-* tradeoff evaluation
-* complexity estimation
-* root-cause reasoning
-
----
-
-## 📄 review.md
-
-Evaluates correctness and quality.
-
-Focus:
-
-* code correctness
-* architecture alignment
-* maintainability
-* logic validation
-* design consistency
+* plan.md → planning intelligence
+* analyze.md → system reasoning
+* review.md → quality control
+* validate.md → constraint enforcement
+* security.md → threat reasoning
+* refactor.md → structural transformation
+* docs.md → documentation generation
+* adr.md → architectural memory
 
 ---
 
-## 📄 validate.md
+# ⚙️ LAYER 2 — GLOBAL SKILLS (EXECUTION SYSTEM)
 
-Ensures system meets constraints.
+Skills define **how BUILD mode executes engineering work**.
 
-Focus:
-
-* acceptance criteria validation
-* contract verification
-* regression detection
-* edge-case coverage
-* test alignment
+They are reusable execution engines.
 
 ---
 
-## 📄 security.md
+## Skill Responsibilities Overview
 
-Evaluates system security posture.
-
-Focus:
-
-* threat modeling
-* vulnerability detection
-* secure coding practices
-* dependency risk analysis
-* access control validation
+* system-design → architecture design
+* reliability → failure handling
+* ddd → domain modeling
+* event-driven → async systems
+* ai-governance → safe AI execution
+* observability → system visibility
 
 ---
 
-## 📄 refactor.md
+# 📦 LAYER 3 — PROJECT KNOWLEDGE (TRUTH SYSTEM)
 
-Improves structure without changing behavior.
-
-Focus:
-
-* duplication removal
-* structural cleanup
-* architecture improvement
-* pattern alignment
-* performance-safe refactoring
-
----
-
-## 📄 docs.md
-
-Generates system documentation.
-
-Focus:
-
-* API documentation
-* architecture documentation
-* usage guides
-* system narratives
-* inline explanations
-
----
-
-## 📄 adr.md
-
-Manages architectural decision records.
-
-Focus:
-
-* decision capture
-* tradeoff documentation
-* rationale tracking
-* system evolution history
-
----
-
-# ⚙️ LAYER 2 — GLOBAL SKILLS (EXECUTION CAPABILITIES)
-
-Skills define **how BUILD mode executes work**.
-
----
-
-## 📄 system-design.md
-
-Scalable architecture design capability.
-
-Includes:
-
-* distributed systems
-* service decomposition
-* API design
-* scalability planning
-* architectural patterns
-
----
-
-## 📄 reliability.md
-
-System resilience under failure.
-
-Includes:
-
-* fault tolerance
-* redundancy
-* recovery strategies
-* SLO/SLA design
-* graceful degradation
-
----
-
-## 📄 ddd.md
-
-Domain-driven design modeling.
-
-Includes:
-
-* bounded contexts
-* aggregates
-* ubiquitous language
-* domain services
-* context mapping
-
----
-
-## 📄 event-driven.md
-
-Asynchronous architecture design.
-
-Includes:
-
-* event modeling
-* pub/sub systems
-* message brokers
-* event sourcing basics
-* decoupled architecture
-
----
-
-## 📄 ai-governance.md
-
-Safe AI execution control layer.
-
-Includes:
-
-* output validation
-* drift control
-* prompt constraints
-* human-in-loop checks
-* traceability rules
-
----
-
-## 📄 observability.md
-
-System visibility and debugging.
-
-Includes:
-
-* logging strategy
-* metrics design
-* distributed tracing
-* alerting systems
-* diagnostics design
-
----
-
-# 📦 LAYER 3 — PROJECT KNOWLEDGE (TRUTH LAYER)
-
-Defines **what is true in this system**.
+Defines **what is true in a system context**
 
 ```text
 .opencode/
 ```
 
----
+Includes:
 
-## Structure
-
-```text
-.opencode/
-    agent/
-        payments-domain.md
-        inventory-domain.md
-
-    AGENTS.md   (optional overrides)
-    SKILLS.md    (optional overrides)
-```
+* domain rules
+* business logic
+* system constraints
+* repository-specific invariants
 
 ---
 
-## 📄 payments-domain.md
+# 🧠 OPENCODE CLI EXECUTION MODEL
 
-Defines payment system constraints:
+OpenCode CLI is a **terminal-native cognitive runtime system**.
 
-* transaction lifecycle
-* gateway integration
-* fraud signals
-* reconciliation flows
+Supports:
 
----
-
-## 📄 inventory-domain.md
-
-Defines inventory system constraints:
-
-* stock tracking
-* reservation logic
-* warehouse sync
-* event-driven updates
+* conversational reasoning
+* structured workflows
+* memory-aware sessions
+* tool chaining
+* iterative refinement loops
 
 ---
 
-# 🧠 OPENCODE CONTEXT SYSTEM
+## Command System
 
-## @ Context Injection
+| Symbol | Meaning           |
+| ------ | ----------------- |
+| @      | context injection |
+| /      | cognitive actions |
+| !      | shell execution   |
+
+---
+
+## Context Injection
 
 ```text
 @src/
@@ -379,14 +206,9 @@ Defines inventory system constraints:
 @database/schema.prisma
 ```
 
-Meaning:
-
-* load real code into reasoning context
-* ground decisions in system state
-
 ---
 
-## / Command System
+## Commands
 
 ```text
 /plan
@@ -395,40 +217,14 @@ Meaning:
 /skill reliability
 ```
 
-Meaning:
-
-* trigger workflows
-* activate reasoning modes
-* enable execution capabilities
-
 ---
 
-## ! Shell Execution
+## Shell Execution
 
 ```text
 !npm test
 !pnpm build
 ```
-
-Meaning:
-
-* direct system execution
-* CI integration
-* automation hooks
-
----
-
-# 💻 CLI EXECUTION MODEL
-
-OpenCode CLI is a **terminal-native cognitive runtime**.
-
-Supports:
-
-* chat + tools
-* context injection
-* session memory
-* plan-build cycles
-* iterative refinement
 
 ---
 
@@ -438,23 +234,16 @@ Supports:
 opencode run "Scan @src for unused exports"
 ```
 
-Used for:
-
-* CI pipelines
-* automation agents
-* PR bots
-* scripted workflows
+Used for automation, CI, and agents.
 
 ---
 
 # 🔁 CORE WORKFLOW LOOP
 
-## Standard Lifecycle
-
 ```text
 /init
   ↓
-@context injection
+@context
   ↓
 /plan
   ↓
@@ -471,47 +260,7 @@ review
 
 ---
 
-## Execution Flow
-
-1. Attach context (`@`)
-2. Plan system (`/plan`)
-3. Analyze architecture
-4. Build implementation (`/build`)
-5. Validate correctness
-6. Review quality
-7. Record ADR
-
----
-
-# 🎯 SYSTEM COMMAND MODEL
-
-| Symbol | Meaning |
-| ------ | ------- |
-| @      | context |
-| /      | actions |
-| !      | shell   |
-
----
-
-# 🎨 SEPARATION OF CONCERNS
-
-## DESIGN.md
-
-* UI rules
-* spacing system
-* typography
-* design tokens
-
-## AGENTS.md
-
-* reasoning rules
-* governance constraints
-* workflow logic
-* execution policies
-
----
-
-# 🔁 FULL SYSTEM LOOP (FINAL FORM)
+# 🎯 FULL SYSTEM LOOP
 
 ```text
 @context → /plan → analyze → /build → validate → review → /adr
@@ -519,11 +268,9 @@ review
 
 ---
 
-# 🧠 ARCHITECTURAL MODEL (3 LAYERS)
+# 🧠 ARCHITECTURAL MODEL
 
 ## 1. GLOBAL AGENTS (THINKING)
-
-Defines *how the system reasons*
 
 * plan
 * analyze
@@ -538,8 +285,6 @@ Defines *how the system reasons*
 
 ## 2. GLOBAL SKILLS (EXECUTION)
 
-Defines *how the system builds*
-
 * system-design
 * reliability
 * ddd
@@ -551,11 +296,9 @@ Defines *how the system builds*
 
 ## 3. PROJECT KNOWLEDGE (TRUTH)
 
-Defines *what is true in this system*
-
-* domain constraints
+* domain rules
+* system constraints
 * business logic
-* repository-specific rules
 
 ---
 
@@ -575,16 +318,16 @@ Defines *what is true in this system*
 
 Without structure:
 
-* AI reasoning drifts
-* architecture becomes inconsistent
-* knowledge is fragmented
-* prompts are repeated endlessly
+* reasoning drifts
+* architecture fragments
+* duplication grows
+* prompt sprawl emerges
 
 With OpenCode OS:
 
 * deterministic workflows
 * reusable cognition system
-* enforced architecture discipline
+* enforceable architecture discipline
 * CI-native automation
 * scalable engineering governance
 
@@ -592,28 +335,65 @@ With OpenCode OS:
 
 # 🧠 FINAL PRINCIPLE
 
-OpenCode is not a chat interface.
+OpenCode is not a tool.
 
 It is:
 
 > a **multi-agent, multi-skill, CLI-native cognitive operating system for governed software engineering**
 
-You do not prompt it.
+---
 
-You **design the system that designs the software with you.**
+# 📁 APPENDIX A — DIRECTORY STRUCTURE
+
+## 🧠 Global System Layout
+
+```text
+~/.config/opencode/
+├── agent/
+│   ├── plan.md
+│   ├── analyze.md
+│   ├── review.md
+│   ├── validate.md
+│   ├── security.md
+│   ├── refactor.md
+│   ├── docs.md
+│   └── adr.md
+│
+└── skill/
+    ├── system-design.md
+    ├── reliability.md
+    ├── ddd.md
+    ├── event-driven.md
+    ├── ai-governance.md
+    └── observability.md
+```
 
 ---
 
-# 📁 GLOBAL AGENTS (~/.config/opencode/agent/)
+## 📦 Project Knowledge Layout
+
+```text
+.opencode/
+├── agent/
+│   ├── payments-domain.md
+│   └── inventory-domain.md
+│
+├── AGENTS.md
+└── SKILLS.md
+```
 
 ---
 
-## 📄 `plan.md`
+# 📁 APPENDIX B — GLOBAL AGENTS (COPY-PASTE FILES)
+
+---
+
+## 📄 plan.md
 
 ```md
 # plan agent
 
-Defines scope, requirements, and execution roadmap before any implementation begins.
+Defines scope, requirements, and execution roadmap before implementation begins.
 
 ## Core Responsibilities
 
@@ -639,7 +419,7 @@ A good plan minimizes ambiguity before execution begins.
 
 ---
 
-## 📄 `analyze.md`
+## 📄 analyze.md
 
 ```md
 # analyze agent
@@ -670,7 +450,7 @@ Understand the system before deciding how to change it.
 
 ---
 
-## 📄 `review.md`
+## 📄 review.md
 
 ```md
 # review agent
@@ -686,21 +466,14 @@ Evaluates correctness, quality, and alignment of changes.
 - consistency checking
 - anti-pattern detection
 
-## Output Style
-
-- structured feedback
-- issue lists with severity
-- improvement suggestions
-- risk identification
-
 ## Key Principle
 
-Every change must survive critical scrutiny before merge or execution.
+Every change must survive critical scrutiny before execution.
 ```
 
 ---
 
-## 📄 `validate.md`
+## 📄 validate.md
 
 ```md
 # validate agent
@@ -716,12 +489,6 @@ Ensures outputs meet requirements and constraints.
 - test alignment
 - system invariants checking
 
-## Output Style
-
-- pass/fail reasoning
-- constraint mapping
-- gap analysis
-
 ## Key Principle
 
 If it is not validated, it is not done.
@@ -729,12 +496,12 @@ If it is not validated, it is not done.
 
 ---
 
-## 📄 `security.md`
+## 📄 security.md
 
 ```md
 # security agent
 
-Evaluates security posture and risks across the system.
+Evaluates security posture and risks.
 
 ## Core Responsibilities
 
@@ -745,40 +512,27 @@ Evaluates security posture and risks across the system.
 - authentication/authorization checks
 - data exposure analysis
 
-## Output Style
-
-- risk severity classification
-- attack surface identification
-- mitigation recommendations
-
 ## Key Principle
 
-Assume every system is under potential attack.
+Assume every system is under attack.
 ```
 
 ---
 
-## 📄 `refactor.md`
+## 📄 refactor.md
 
 ```md
 # refactor agent
 
-Improves system structure without changing behavior.
+Improves structure without changing behavior.
 
 ## Core Responsibilities
 
-- code simplification
 - duplication removal
 - structural optimization
 - pattern alignment
 - dependency cleanup
-- performance-safe restructuring
-
-## Output Style
-
-- before/after reasoning
-- minimal-change refactor plans
-- safe transformation steps
+- safe transformation
 
 ## Key Principle
 
@@ -787,27 +541,20 @@ Improve structure without altering meaning.
 
 ---
 
-## 📄 `docs.md`
+## 📄 docs.md
 
 ```md
 # docs agent
 
-Generates and maintains system documentation.
+Generates system documentation.
 
 ## Core Responsibilities
 
 - API documentation
 - architecture documentation
-- usage guides
-- system explanations
-- inline code documentation
-- onboarding materials
-
-## Output Style
-
-- clear structured markdown
-- diagrams (if needed conceptually)
-- developer-friendly explanations
+- onboarding guides
+- system narratives
+- inline explanations
 
 ## Key Principle
 
@@ -816,59 +563,51 @@ If it is not documented, it does not exist.
 
 ---
 
-## 📄 `adr.md`
+## 📄 adr.md
 
 ```md
 # adr agent
 
-Manages architectural decision records (ADR).
+Captures architectural decisions.
 
 ## Core Responsibilities
 
-- capture architectural decisions
-- document tradeoffs
-- record rationale
-- track system evolution
-- preserve historical context
+- decision recording
+- tradeoff documentation
+- rationale tracking
+- system evolution history
 - decision traceability
-
-## Output Style
-
-- decision → context → options → outcome
-- clear reasoning chains
-- immutable records
 
 ## Key Principle
 
-Every non-trivial decision must be explainable later.
+If it is not recorded, it is lost.
 ```
----
-
-# ⚙️ GLOBAL SKILLS (~/.config/opencode/skill/)
 
 ---
 
-## 📄 `system-design.md`
+# ⚙️ APPENDIX C — GLOBAL SKILLS (COPY-PASTE FILES)
+
+---
+
+## 📄 system-design.md
 
 ```md
 # system-design skill
 
-Provides scalable architecture design capability.
-
 ## Includes
 
-- distributed systems design
+- distributed systems
 - service decomposition
 - API design
 - scalability planning
-- system architecture patterns
+- architecture patterns
 - database design at scale
 
-## Output Style
+## Output
 
 - architecture diagrams (textual)
-- tradeoff matrices
 - scaling strategies
+- tradeoff analysis
 
 ## Key Principle
 
@@ -877,41 +616,30 @@ Design for growth, failure, and change.
 
 ---
 
-## 📄 `reliability.md`
+## 📄 reliability.md
 
 ```md
 # reliability skill
 
-Ensures systems remain stable under failure conditions.
-
 ## Includes
 
 - fault tolerance
-- redundancy strategies
-- recovery mechanisms
-- SLO / SLA design
+- redundancy
+- recovery strategies
+- SLO/SLA design
 - graceful degradation
-- incident handling patterns
-
-## Output Style
-
-- failure mode analysis
-- mitigation strategies
-- resilience checklists
 
 ## Key Principle
 
-Assume failure is normal, not exceptional.
+Failure is normal system behavior.
 ```
 
 ---
 
-## 📄 `ddd.md`
+## 📄 ddd.md
 
 ```md
 # ddd skill
-
-Domain-driven design modeling capability.
 
 ## Includes
 
@@ -920,103 +648,81 @@ Domain-driven design modeling capability.
 - domain services
 - ubiquitous language
 - context mapping
-- domain event modeling
-
-## Output Style
-
-- domain models
-- bounded context diagrams (conceptual)
-- entity relationships
 
 ## Key Principle
 
-Model the business, not just the database.
+Model the business, not the database.
 ```
 
 ---
 
-## 📄 `event-driven.md`
+## 📄 event-driven.md
 
 ```md
 # event-driven skill
 
-Designs asynchronous, event-based systems.
-
 ## Includes
 
 - event modeling
-- pub/sub architectures
+- pub/sub systems
 - message brokers
 - event sourcing concepts
 - eventual consistency
-- decoupled systems design
-
-## Output Style
-
-- event flows
-- producer/consumer mapping
-- async sequence descriptions
 
 ## Key Principle
 
-Decouple systems through events, not direct calls.
+Decouple systems through events.
 ```
 
 ---
 
-## 📄 `ai-governance.md`
+## 📄 ai-governance.md
 
 ```md
 # ai-governance skill
 
-Ensures safe and controlled AI-assisted execution.
-
 ## Includes
 
+- output validation
 - prompt constraints
-- output validation rules
 - drift detection
-- human-in-the-loop design
-- traceability mechanisms
+- human-in-loop control
 - execution boundaries
-
-## Output Style
-
-- rule sets
-- guardrails
-- validation checkpoints
 
 ## Key Principle
 
-AI must operate within explicit boundaries.
+AI must operate within constraints.
 ```
 
 ---
 
-## 📄 `observability.md`
+## 📄 observability.md
 
 ```md
 # observability skill
 
-Provides system visibility and debugging capabilities.
-
 ## Includes
 
-- logging strategy design
-- metrics definition
+- logging design
+- metrics design
 - distributed tracing
 - alerting systems
-- system diagnostics
-- monitoring architecture
-
-## Output Style
-
-- observability maps
-- signal definitions
-- debugging workflows
+- debugging systems
 
 ## Key Principle
 
 You cannot fix what you cannot see.
 ```
 
+---
+
+# 🧠 END STATE
+
+OpenCode is a **structured cognitive execution environment** where:
+
+* Agents define reasoning
+* Skills define execution
+* Project defines truth
+* CLI defines orchestration
+* multi-skill composition system
+* or a VSCode + Continue.dev integration architecture layer
