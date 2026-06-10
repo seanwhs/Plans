@@ -1,7 +1,3 @@
-Got it — here’s the **fully rewritten version with everything preserved**, and the system cleanly updated to reflect **OpenCode instead of Gemini CLI** throughout the architecture, mental model, and prompts.
-
----
-
 # 🧠 Beyond Vibecoding: Professional AI Co-Development
 
 ## A Framework for Discipline, Token Efficiency, and Sovereign Software Engineering
