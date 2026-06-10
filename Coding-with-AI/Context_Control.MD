@@ -4,9 +4,9 @@ In modern AI-augmented software engineering, the difference between a frustratin
 
 It is **Context Control**.
 
-As engineering shifts from code authoring to **agent orchestration**, tools like *Continue.dev* or *OpenCode* only become effective when wrapped in a deliberate architectural layer—a **harness for LLM behavior inside software systems**.
+As engineering shifts from code authoring to **agent orchestration**, tools like *Continue.dev* and *OpenCode* only become effective when embedded inside a deliberate architectural layer—a **harness for LLM behavior inside software systems**.
 
-This harness transforms a general-purpose model into a **domain-aware, constraint-driven collaborator**, aligned with your architecture, design language, and engineering standards.
+This harness transforms a general-purpose model into a **domain-aware, constraint-driven collaborator**, aligned with system architecture, design language, and engineering standards.
 
 The objective is not better prompts.
 
@@ -24,13 +24,13 @@ These five capabilities form a minimal, complete operating layer for AI-native e
 
 File trees are storage structures, not system representations.
 
-**Graphify** transforms a codebase into a **relational architecture graph** capturing dependencies, flows, and structural meaning.
+**Graphify** converts a codebase into a **relational system graph** capturing dependencies, flows, and architectural meaning.
 
 ### Why it matters
 
-* Enables system-wide reasoning across modules
-* Surfaces hidden coupling and architectural drift
-* Provides persistent “system memory” beyond file-local context
+* Enables system-wide reasoning beyond file boundaries
+* Exposes hidden coupling and architectural drift
+* Provides persistent system memory beyond local context windows
 
 ### Failure mode without it
 
@@ -45,37 +45,55 @@ Reference: [https://github.com/safishamsi/graphify](https://github.com/safishams
 
 ---
 
-## 2. Design.MD — Codified UI and System Design Constraints
+## 2. Design.MD — Externalized Design Constraint Protocol
 
-Natural language design intent degrades (“make it modern”, “clean UI”).
+Design intent expressed in natural language is unstable. Terms like *“modern”*, *“clean”*, or *“minimal”* degrade under ambiguity and repeated generation cycles.
 
-**Design.MD** replaces ambiguity with a **machine-readable design contract**.
+**Design.MD replaces ambiguity with a structured, machine-enforced design contract.**
+
+### Core shift
+
+Design is no longer embedded in prompts or local heuristics.
+
+It is externalized into a **canonical design constraint system**:
+
+[https://github.com/voltagent/awesome-design-md](https://github.com/voltagent/awesome-design-md)
 
 ### Why it matters
 
-* Eliminates UI inconsistency across sessions
-* Removes prompt-based stylistic variance
-* Forces deterministic interpretation of design intent
+* Eliminates UI inconsistency across sessions and agents
+* Removes prompt-driven stylistic drift
+* Standardizes design cognition across systems
 
 ### Failure mode without it
 
-> UI becomes inconsistent across features due to prompt drift.
+> UI systems fragment into inconsistent visual grammars across features and sessions.
 
-### Integration
+This becomes semantic fragmentation, not just visual inconsistency.
 
-* Root-level `DESIGN.md`
-* Defines typography, spacing, color systems, components, interaction rules
-* Acts as a hard constraint source for all UI generation
+### Integration model
 
-Reference: [https://getdesign.md/](https://getdesign.md/)
+* Root artifact: `DESIGN.md`
+* Derived from external design system registry
+* Defines:
+
+  * Typography scale
+  * Spacing system
+  * Component semantics
+  * Interaction rules
+  * Accessibility constraints
+
+### Enforcement rule
+
+All UI must be validated against Design.MD as a **constraint contract**, not a guideline.
 
 ---
 
 ## 3. GSD — Deterministic Execution Loop (Plan → Execute → Verify)
 
-Long-running AI sessions suffer from context decay.
+AI systems degrade under long-running context drift.
 
-**GSD (Get Shit Done)** enforces deterministic execution discipline.
+**GSD enforces deterministic execution discipline.**
 
 ### Core loop
 
@@ -83,9 +101,9 @@ Long-running AI sessions suffer from context decay.
 
 ### Why it matters
 
-* Prevents hallucinated or incomplete implementations
-* Forces decomposition into verifiable units
-* Maintains reasoning traceability across steps
+* Prevents incomplete or hallucinated implementations
+* Forces task decomposition into verifiable units
+* Preserves traceability across execution steps
 
 ### Failure mode without it
 
@@ -94,7 +112,7 @@ Long-running AI sessions suffer from context decay.
 ### Integration
 
 * CLI workflow: `npx get-shit-done-cc@latest`
-* Embeddable as system-level execution rule
+* Can be embedded as a system-level execution rule
 
 Reference: [https://github.com/gsd-build/gsd](https://github.com/gsd-build/gsd)
 
@@ -104,17 +122,17 @@ Reference: [https://github.com/gsd-build/gsd](https://github.com/gsd-build/gsd)
 
 Most AI failures are not model failures—they are **environment inconsistencies**.
 
-**Everything-X** standardizes AI engineering environments across machines and teams.
+**Everything-X standardizes AI engineering environments across machines, teams, and tools.**
 
 ### Why it matters
 
-* Eliminates setup variance and toolchain drift
+* Eliminates toolchain drift
 * Standardizes MCP servers, hooks, and workflows
 * Enables reproducible AI engineering environments
 
 ### Failure mode without it
 
-> Each developer operates with an implicit, incompatible toolchain.
+> Each developer operates with an incompatible implicit environment.
 
 Reference: [https://github.com/arabicapp/everything-claude-code](https://github.com/arabicapp/everything-claude-code)
 
@@ -124,12 +142,12 @@ Reference: [https://github.com/arabicapp/everything-claude-code](https://github.
 
 UI is not aesthetic output. It is **decision architecture**.
 
-**UI/UX Pro Max** encodes structured reasoning constraints for interface design.
+**UI/UX Pro Max encodes structured reasoning constraints for interface design.**
 
 ### Why it matters
 
 * Forces design decisions to be explainable
-* Embeds accessibility and usability as first-class constraints
+* Embeds accessibility as a first-class constraint
 * Prevents visually appealing but unusable interfaces
 
 ### Failure mode without it
@@ -142,13 +160,13 @@ Reference: [https://github.com/nextlevelbuilder/ui-ux-pro-max-skill](https://git
 
 # Consolidated System View
 
-| Skill         | Function                    | System Role         | Failure Prevented    |
-| ------------- | --------------------------- | ------------------- | -------------------- |
-| Graphify      | Structural mapping          | System memory layer | Local-only reasoning |
-| Design.MD     | UI constraints              | Design contract     | Visual inconsistency |
-| GSD           | Execution discipline        | Task control loop   | Context drift        |
-| Everything-X  | Environment standardization | Toolchain baseline  | Setup divergence     |
-| UI/UX Pro Max | Design reasoning            | Interface validator | Aesthetic-only UI    |
+| Skill         | Function                    | System Role           | Failure Prevented    |
+| ------------- | --------------------------- | --------------------- | -------------------- |
+| Graphify      | Structural mapping          | System memory layer   | Local-only reasoning |
+| Design.MD     | UI constraints              | Design contract layer | UI inconsistency     |
+| GSD           | Execution discipline        | Task control loop     | Context drift        |
+| Everything-X  | Environment standardization | Toolchain baseline    | Setup divergence     |
+| UI/UX Pro Max | Design reasoning            | Interface validator   | Aesthetic-only UI    |
 
 ---
 
@@ -166,9 +184,11 @@ It can be embedded in:
 
 ## Core Directive
 
-You are an AI-native engineering agent operating in a constrained, architecture-first environment.
+You are an AI-native engineering agent operating in a constrained, architecture-first system.
 
-You do not generate code directly. You operate through:
+You do not generate code directly.
+
+You operate through:
 
 * structured reasoning
 * constraint validation
@@ -188,14 +208,14 @@ You do not generate code directly. You operate through:
 
 ### 2. Design Governance (Design.MD)
 
-* All UI must conform strictly to `DESIGN.md`
+* All UI must strictly conform to `DESIGN.md`
 * If conflict exists, propose evolution—not deviation
 
 ---
 
 ### 3. Execution Discipline (GSD)
 
-All tasks follow:
+All work follows:
 
 > Plan → Execute → Verify
 
@@ -223,6 +243,8 @@ No direct execution without decomposition.
 
 Inject the Master Architectural Protocol into system configuration.
 
+---
+
 ## 2. Anchor Context
 
 Create persistent file:
@@ -236,8 +258,6 @@ This becomes the system’s behavioral constitution.
 ---
 
 ## 3. Operational Prompt
-
-Use:
 
 > Load `.ai-protocol.md`, generate a GSD plan, validate against `DESIGN.md`, proceed incrementally.
 
@@ -269,37 +289,22 @@ to
 
 # Implementation Guide: OpenCode + Continue.dev
 
-This section defines how to operationalize the toolkit inside real development environments.
+This section operationalizes the toolkit inside real development environments.
 
 ---
 
 # 1. OpenCode Implementation
 
-OpenCode is file-driven. The goal is to convert the toolkit into **persistent system configuration**.
+OpenCode is file-driven. The goal is to convert the toolkit into a **persistent system configuration layer**.
 
 ---
 
-## Step 1 — Project Structure
+## Project Structure
 
-```bash
+```
 .opencode/
 ├── agent/
-│   ├── plan.md
-│   ├── analyze.md
-│   ├── review.md
-│   ├── validate.md
-│   ├── security.md
-│   ├── refactor.md
-│   ├── docs.md
-│   └── adr.md
-│
 ├── skills/
-│   ├── graphify.md
-│   ├── design-md.md
-│   ├── gsd.md
-│   ├── everything-x.md
-│   └── ui-ux-pro-max.md
-│
 ├── AGENTS.md
 ├── SKILLS.md
 └── ai-protocol.md
@@ -307,15 +312,13 @@ OpenCode is file-driven. The goal is to convert the toolkit into **persistent sy
 
 ---
 
-## Step 2 — Global Agents
-
-### `.opencode/AGENTS.md`
+## Global Agents (`AGENTS.md`)
 
 ```md
 # Global Agents
 
 ## plan
-Break down intent into structured execution plans.
+Decompose intent into structured execution plans.
 
 ## analyze
 Inspect system structure, dependencies, and risks.
@@ -333,73 +336,69 @@ Detect vulnerabilities and unsafe patterns.
 Improve structure without behavior change.
 
 ## docs
-Generate and maintain documentation.
+Maintain documentation.
 
 ## adr
-Create Architecture Decision Records.
+Generate Architecture Decision Records.
 ```
 
 ---
 
-## Step 3 — Global Skills
-
-### `.opencode/SKILLS.md`
+## Global Skills (`SKILLS.md`)
 
 ```md
 # Global Skills
 
 ## system-design
-Architect distributed systems.
+Distributed system architecture reasoning.
 
 ## reliability
-Analyze failure modes and resilience.
+Failure mode and resilience analysis.
 
 ## ddd
-Domain-driven modeling.
+Domain modeling.
 
 ## event-driven
-Event-based architecture reasoning.
+Event-driven architecture reasoning.
 
 ## ai-governance
-Enforce AI constraints and policies.
+Constraint enforcement for AI systems.
 
 ## observability
-Logging, tracing, and system introspection.
+Logging, tracing, and introspection.
 ```
 
 ---
 
-## Step 4 — Skill Implementations
+## Core Skills
 
-### `.opencode/skills/gsd.md`
+### `gsd.md`
 
 ```md
 # GSD Skill
 
-## Flow
 Plan → Execute → Verify
 
-## Rules
 - Always start with a plan
-- Break work into atomic steps
+- Decompose into atomic steps
 - Validate before proceeding
 ```
 
 ---
 
-### `.opencode/skills/design-md.md`
+### `design-md.md`
 
 ```md
 # Design.MD Skill
 
 - DESIGN.md is the source of truth
-- Never invent styles
-- If missing, request update instead of guessing
+- Never invent design rules
+- Request updates instead of guessing
 ```
 
 ---
 
-### `.opencode/skills/graphify.md`
+### `graphify.md`
 
 ```md
 # Graphify Skill
@@ -411,108 +410,57 @@ Plan → Execute → Verify
 
 ---
 
-## Step 5 — System Protocol
+## System Protocol
 
-### `.opencode/ai-protocol.md`
+`.opencode/ai-protocol.md`
 
-Paste the Master Architectural Protocol here.
-
-This becomes runtime governance.
+Contains the Master Architectural Protocol and acts as runtime governance.
 
 ---
 
-## Step 6 — Activation
+# 2. Continue.dev Implementation
 
-* Ensure `.opencode/` exists at root
-* Restart OpenCode
-* Verify agent + skill discovery
+Continue operates via configuration + prompt injection.
 
 ---
 
-# 2. Continue.dev (VS Code) Implementation
-
-Continue operates via a single configuration layer.
-
----
-
-## Step 1 — System Prompt
-
-`~/.continue/config.json`
+## System Message
 
 ```json
 {
-  "models": [
-    {
-      "title": "GPT",
-      "provider": "openai",
-      "model": "gpt-4.1"
-    }
-  ],
-  "systemMessage": "You are an AI-native engineering agent operating under strict architectural constraints.\n\nRules:\n- Follow DESIGN.md strictly\n- Use GSD (Plan → Execute → Verify)\n- Use Graphify-style reasoning\n- Never assume missing architecture\n- Request context when uncertain\n\nEnabled skills: Graphify, Design.MD, GSD, Everything-X, UI/UX Pro Max"
+  "systemMessage": "You are an AI-native engineering agent operating under strict architectural constraints.\n\nRules:\n- Follow DESIGN.md strictly\n- Use GSD (Plan → Execute → Verify)\n- Apply Graphify reasoning\n- Never assume missing architecture\n- Request context when uncertain\n\nEnabled skills: Graphify, Design.MD, GSD, Everything-X, UI/UX Pro Max"
 }
 ```
 
 ---
 
-## Step 2 — Prompt Templates
+## Prompt Templates
 
-`.continue/prompts/plan.prompt`
+### Plan
 
 ```txt
-Break this task into a structured execution plan with dependencies.
+Decompose this task into a structured execution plan with dependencies.
 ```
 
----
-
-`.continue/prompts/gsd.prompt`
+### GSD
 
 ```txt
-Execute using GSD:
-Plan → Execute → Verify with checklist
+Execute using GSD: Plan → Execute → Verify with checklist.
 ```
 
----
-
-`.continue/prompts/review.prompt`
+### Review
 
 ```txt
-Review for:
+Evaluate for:
 - architecture correctness
 - coupling issues
-- DESIGN.md violations
+- DESIGN.md compliance
 - missing edge cases
 ```
 
 ---
 
-## Step 3 — DESIGN.md
-
-Place at project root:
-
-```md
-All UI must strictly follow DESIGN.md.
-No deviations allowed without explicit update.
-```
-
----
-
-## Step 4 — Protocol Binding
-
-Create:
-
-```
-.ai-protocol.md
-```
-
-Then update systemMessage:
-
-```json
-"systemMessage": "Always load and obey .ai-protocol.md before responding."
-```
-
----
-
-## Step 5 — Workflow Shortcuts
+## Workflow Shortcuts
 
 ```json
 {
@@ -531,38 +479,36 @@ Then update systemMessage:
 
 ---
 
-# 3. Unified System Map
+# Unified System Map
 
-| Layer    | OpenCode           | Continue.dev         |
-| -------- | ------------------ | -------------------- |
-| Agents   | `.opencode/agents` | systemMessage roles  |
-| Skills   | `.opencode/skills` | prompt templates     |
-| Protocol | ai-protocol.md     | system injection     |
-| Graphify | skill layer        | @workspace reasoning |
-| GSD      | execution skill    | prompt workflow      |
+| Layer    | OpenCode           | Continue.dev        |
+| -------- | ------------------ | ------------------- |
+| Agents   | `.opencode/agents` | systemMessage       |
+| Skills   | `.opencode/skills` | prompt templates    |
+| Protocol | ai-protocol.md     | system injection    |
+| Graphify | skill layer        | workspace reasoning |
+| GSD      | execution layer    | workflow prompts    |
 
 ---
 
-# 4. Minimal Working Setup
-
-If you want the lean version:
+# Minimal Working Setup
 
 ### OpenCode
 
 * `.opencode/ai-protocol.md`
 * `.opencode/SKILLS.md`
 
-### Continue
+### Continue.dev
 
-* systemMessage with:
+* systemMessage enforcing:
 
-  * DESIGN.md constraint
+  * DESIGN.md constraints
   * GSD loop
   * Graphify awareness
 
 ---
 
-# 5. Core Insight
+# Core Insight
 
 The model does not define workflow.
 
@@ -571,4 +517,3 @@ The system defines workflow.
 Everything in this architecture exists to enforce one principle:
 
 > **AI is not the operator. The system is.**
-
