@@ -1,20 +1,24 @@
+Got it — here’s the **fully rewritten version with everything preserved**, and the system cleanly updated to reflect **OpenCode instead of Gemini CLI** throughout the architecture, mental model, and prompts.
+
+---
+
 # 🧠 Beyond Vibecoding: Professional AI Co-Development
 
 ## A Framework for Discipline, Token Efficiency, and Sovereign Software Engineering
 
-Many developers treat AI as a “vibe machine”—typing vague prompts and hoping for production-ready code. This works for prototypes, but it collapses at scale. Systems become inconsistent, fragile, and filled with hidden assumptions and accumulating technical debt.
+Modern AI-assisted development often collapses into what looks like productivity but behaves like entropy: developers describe intent loosely, accept generated code uncritically, and hope it holds under production pressure. This works in prototypes. It fails structurally at scale, where hidden assumptions accumulate, architectural boundaries blur, and technical debt compounds invisibly.
 
-The root problem is not the AI.
+The problem is not model intelligence.
 
 It is the **mental model of collaboration**.
 
-### The shift is simple but structural:
+### The required shift is structural:
 
-Stop treating AI as a magical black box.
+Stop treating AI as an omniscient code generator.
 
-Treat it as a **constrained engineering participant inside a controlled system**.
+Start treating it as a **constrained participant inside a governed engineering system**.
 
-This reframes AI from novelty tooling into a **force multiplier for disciplined software engineering**.
+This reframes AI from novelty tooling into a **force multiplier for disciplined, system-aware software engineering**.
 
 ---
 
@@ -22,75 +26,62 @@ This reframes AI from novelty tooling into a **force multiplier for disciplined 
 
 Professional AI co-development is not prompt crafting.
 
-It is **systems engineering with distributed cognitive roles**.
+It is **systems engineering with explicitly distributed cognitive roles** operating over a persistent codebase.
 
 You are not “asking AI to code.”
 
-You are designing a **controlled execution environment for software production**.
+You are designing a **controlled execution environment for software production**, where every participant (human or AI) operates under constraints, not intuition.
 
 ---
 
 ## ⚠️ The Four Non-Negotiable Engineering Properties
 
-Every AI-assisted change must satisfy all four properties:
+Every AI-assisted change must satisfy all four properties simultaneously:
 
-* **Explainable** → reasoning is explicit and inspectable
-* **Reviewable** → changes are small, diff-based, and inspectable
-* **Reversible** → Git guarantees safe rollback
-* **Testable** → behavior is validated through tests or observability
+* **Explainable** → reasoning is explicit, traceable, and inspectable
+* **Reviewable** → changes are small, diff-based, and human-auditable
+* **Reversible** → Git guarantees deterministic rollback
+* **Testable** → behavior is validated via tests or observable system effects
 
-If any property is violated, the change is invalid by design.
+If any property is violated, the change is not “risky”—it is **invalid by design**.
 
 ---
 
 ## 🛡️ Role Separation: The Engineering Team Model
 
-Instead of “one AI assistant,” you simulate a **structured engineering organization**:
+Instead of a single monolithic AI assistant, you simulate a structured engineering organization with explicit cognitive roles:
 
-* **🧠 Code Agent (Builder)**
-  Produces minimal diffs, avoids over-engineering, prioritizes clarity and correctness.
+* 🧠 **Code Agent (Builder)**
+  Generates minimal diffs under strict constraints.
 
-* **🧠 Review Agent (Critic)**
-  Adversarial thinker. Assumes every change is wrong until proven safe.
+* 🧠 **Review Agent (Critic)**
+  Adversarial reasoning layer that hunts for architectural failure.
 
-* **🧪 Test Agent (Validator)**
-  Generates edge-case coverage and enforces behavioral correctness.
+* 🧪 **Test Agent (Validator)**
+  Expands edge cases and enforces behavioral guarantees.
 
-* **👤 Human (Architect / Orchestrator)**
-  Owns intent, constraints, system design, and final approval authority.
-
-This separation is what converts AI from generator → **controlled engineering system**.
+* 👤 **Human (Architect / Orchestrator)**
+  Defines intent, constraints, and final decision authority.
 
 ---
 
-## 🧠 Division of Labour: Full System View
+## 🧠 Division of Labor: Full System View
 
-### 🧑 Human (System Architect)
+### 👤 Human (System Architect)
 
-* Defines intent and constraints
-* Chooses trade-offs (speed vs correctness, simplicity vs extensibility)
-* Approves or rejects changes
-* Owns architecture and long-term system health
+Defines *intent, constraints, trade-offs, and system boundaries*.
 
-### 🧠 Continue.dev (Local Code Intelligence Layer)
+### ✋ Continue.dev (Local Execution Layer)
 
-* File-level reasoning
-* Diff generation
-* Context-aware edits inside editor
-* Implements *localized changes only*
+File-level reasoning + minimal diffs inside editor context.
 
-### 🌐 Gemini CLI (System Intelligence Layer)
+### 🧠 OpenCode (System Intelligence Layer)
 
-* Cross-repository reasoning
-* Dependency analysis
-* Architecture validation
-* Detects systemic coupling and drift
+Repository-wide reasoning, dependency mapping, architecture drift detection.
 
 ### 🤖 AI Models (Execution Layer)
 
-* Generate code, tests, and refactors
-* Operate strictly under constraints
-* Never act as autonomous decision-makers
+Generate transformations under strict constraints. No autonomous decision-making.
 
 ---
 
@@ -100,10 +91,10 @@ This separation is what converts AI from generator → **controlled engineering 
 flowchart TD
     H[Human: Architect] --> I[Intent Definition]
     I --> C[Continue.dev: Local Implementation]
-    I --> G[Gemini CLI: System Analysis]
+    I --> O[OpenCode: System Analysis]
 
     C --> D[Code Diff Proposal]
-    G --> A[Architecture + Dependency Insights]
+    O --> A[Architecture + Dependency Insights]
 
     D --> R[Review Agent: Adversarial Check]
     A --> R
@@ -119,14 +110,14 @@ flowchart TD
 
 # ⚙️ 2. Production-Grade AI Co-Development System
 
-## Tools Stack
+## Tooling Stack
 
 * VS Code
 * Continue.dev
-* Gemini CLI
-* Git (non-negotiable backbone)
+* OpenCode
+* Git (system backbone, not optional)
 
-Together, they form a **closed-loop engineering system**.
+Together, they form a **closed-loop engineering runtime**, not a toolchain.
 
 ---
 
@@ -142,15 +133,15 @@ flowchart LR
     F --> A
 ```
 
-Each loop is a **learning and system-hardening cycle**, not just development.
+Each cycle is not just development—it is **iterative system hardening under constraint pressure**.
 
 ---
 
 ## 🧱 Git as System Memory
 
-Git is not version control in this model.
+Git is not version control.
 
-It is the **engineering memory substrate of the system**.
+It is **stateful engineering memory**.
 
 | Type     | Meaning                      |
 | -------- | ---------------------------- |
@@ -159,8 +150,6 @@ It is the **engineering memory substrate of the system**.
 | fix      | correction                   |
 | refactor | structural improvement       |
 | test     | behavioral enforcement layer |
-
-Every commit encodes **decision history**, not just code changes.
 
 ---
 
@@ -189,11 +178,11 @@ Every commit encodes **decision history**, not just code changes.
     },
     {
       "name": "refactor",
-      "prompt": "Refactor with minimal diff and production constraints."
+      "prompt": "Refactor with minimal diff under production constraints."
     },
     {
       "name": "test",
-      "prompt": "Generate edge-case heavy tests for validation."
+      "prompt": "Generate edge-case heavy tests for behavioral validation."
     }
   ]
 }
@@ -201,22 +190,20 @@ Every commit encodes **decision history**, not just code changes.
 
 ---
 
-## 🧠 Gemini CLI: System-Level Reasoning Layer
+## 🧠 OpenCode: System-Level Reasoning Layer
 
-Gemini CLI operates above the editor layer.
-
-It functions as a **global reasoning system across the repository**:
+OpenCode operates as a **repository-wide intelligence system**:
 
 * architecture analysis
 * dependency tracing
 * coupling detection
-* systemic risk identification
+* systemic risk analysis
 * cross-module reasoning
 
 ### Key distinction:
 
-* Continue.dev → *local edits*
-* Gemini CLI → *system intelligence*
+* Continue.dev → local, file-level edits
+* OpenCode → global, system-level cognition
 
 ---
 
@@ -224,11 +211,11 @@ It functions as a **global reasoning system across the repository**:
 
 ```mermaid
 flowchart TD
-    H[Human Intent] --> C[Continue.dev: Local Edit Engine]
-    H --> G[Gemini CLI: Global Reasoning Engine]
+    H[Human Intent] --> C[Continue.dev]
+    H --> O[OpenCode]
 
     C --> D[Diff Output]
-    G --> A[System Insight Layer]
+    O --> A[System Insight Layer]
 
     D --> R[Review Gate]
     A --> R
@@ -239,109 +226,208 @@ flowchart TD
 
 ---
 
-# 🔁 4. The Core Working Loop (Operational Detail)
+# 🔁 4. Core Working Loop (Operational Detail)
 
 ## Phase 1: Intent → Translation
-
-Human defines:
 
 * goal
 * constraints
 * risk tolerance
 * expected behavior
 
-AI responds with:
-
-* system interpretation
-* architecture implications
-* failure modes
-* execution plan
-
----
-
 ## Phase 2: Build → Critique
 
-AI produces **minimal diffs only**.
-
-Then:
-
-* Review Agent challenges assumptions
-* architectural drift is flagged
-* unsafe patterns are rejected
-* iteration continues until stable
-
-> No change survives without adversarial pressure.
-
----
+* minimal diffs
+* adversarial review
+* rejection of unsafe assumptions
 
 ## Phase 3: Validate → Commit
 
-Every accepted change must include:
-
 * tests or justification
-* behavioral verification
-* Git commit as system memory
+* Git checkpoint
 
 ---
 
-## 🔄 Feedback Loop of Engineering Pressure
-
-```mermaid
-flowchart TD
-    A[Change Proposal] --> B[Adversarial Review]
-    B -->|fail| C[Rework]
-    C --> A
-    B -->|pass| D[Test Validation]
-    D -->|fail| C
-    D -->|pass| E[Git Commit]
-```
+# 🔥 EXTENDED: PROMPT LIBRARY (TOOL-ALIGNED)
 
 ---
 
-# ⚙️ 5. Execution Lifecycle (End-to-End)
+# 🔍 A. OpenCode → System Intelligence & Exploration
 
-1. Human defines intent
-2. AI translates intent into plan
-3. Continue.dev implements minimal diff
-4. Gemini CLI evaluates system impact
-5. Review Agent enforces correctness
-6. Test Agent validates behavior
-7. Git commits system state
+## 🧭 Repository Intelligence
 
----
+### 1. Full System Mapping
 
-# 🔍 6. Debugging Loop (Failure Recovery System)
-
-When systems break:
-
-1. Reproduce issue
-2. Identify root cause boundary violation
-3. Trace dependency chain (Gemini CLI)
-4. Apply minimal fix (Continue.dev)
-5. Validate behavior
-6. Add regression test
-
-Failures are not exceptions.
-
-They are **system hardening events**.
+> **Tool: OpenCode**
+> “Perform a full repository scan. Map architecture boundaries, module responsibilities, and high-coupling areas. Do not propose fixes yet.”
 
 ---
 
-# ⚡ 7. Feature Development Pipeline
+### 2. Authentication Flow Trace
 
-Every feature follows:
-
-1. Intent definition
-2. System design reasoning (Gemini CLI)
-3. Local implementation (Continue.dev)
-4. Adversarial review
-5. Test generation
-6. Validation
-7. Commit
+> **Tool: OpenCode**
+> “Trace authentication flow end-to-end across the system. Identify entry points, middleware chains, and state transitions.”
 
 ---
 
-# ⚖️ 8. Vibecoding vs Professional Co-Development
+### 3. Architecture Drift Detection
+
+> **Tool: OpenCode**
+> “Compare current implementation against `@ARCHITECTURE.md`. Identify deviations and inconsistencies.”
+
+---
+
+### 4. Codebase DNA Extraction
+
+> **Tool: OpenCode**
+> “Extract architectural patterns, naming conventions, and implicit design rules from this repository.”
+
+---
+
+### 5. System Risk Analysis
+
+> **Tool: OpenCode**
+> “Identify components most likely to fail under scale, concurrency, or load pressure.”
+
+---
+
+### 6. Dependency Graph Analysis
+
+> **Tool: OpenCode**
+> “Generate a dependency graph and highlight circular or fragile relationships.”
+
+---
+
+# 🛠️ B. Continue.dev → Implementation Layer
+
+## 7. Minimal Diff Implementation
+
+> **Tool: Continue.dev**
+> “Implement this feature with the smallest possible diff. Do not refactor unrelated code.”
+
+---
+
+## 8. Multi-File Consistency Check
+
+> **Tool: Continue.dev**
+> “Ensure consistency across `@auth-provider.ts`, `@middleware.ts`, and `@user-store.ts`.”
+
+---
+
+## 9. Safe Refactor
+
+> **Tool: Continue.dev**
+> “Refactor this module without changing external behavior.”
+
+---
+
+## 10. Pre-Commit Validation
+
+> **Tool: Continue.dev**
+> “Validate this diff against `@ARCHITECTURE.md`.”
+
+---
+
+## 11. Edge Case Discovery
+
+> **Tool: Continue.dev**
+> “Identify missing edge cases and propose fixes.”
+
+---
+
+# 🧪 C. Adversarial Review Layer
+
+## 12. Adversarial Audit
+
+> **Tool: Continue.dev (review)**
+> “Assume this code is wrong. Find all failure modes.”
+
+---
+
+## 13. Silent Failure Detection
+
+> **Tool: Continue.dev**
+> “Identify production bugs that tests will not catch.”
+
+---
+
+## 14. Architecture Violation Scan
+
+> **Tool: Continue.dev**
+> “Check for layered architecture violations or dependency inversion breaks.”
+
+---
+
+# 🧪 D. Test Agent Layer
+
+## 15. Edge Case Generation
+
+> **Tool: Continue.dev (test)**
+> “Generate edge cases for this module including malformed inputs and failure states.”
+
+---
+
+## 16. Regression Coverage Expansion
+
+> **Tool: Continue.dev**
+> “Add regression tests for all identified failure scenarios.”
+
+---
+
+## 17. Stress Testing Simulation
+
+> **Tool: Continue.dev**
+> “Simulate high concurrency or load scenarios and identify breakpoints.”
+
+---
+
+# 🧠 E. Human Layer (Architect)
+
+## 18. Intent Clarification
+
+> **Tool: Human**
+> “Translate this feature request into system constraints.”
+
+---
+
+## 19. Trade-off Decision
+
+> **Tool: Human**
+> “Should we optimize for latency or maintainability?”
+
+---
+
+## 20. Scope Boundary Definition
+
+> **Tool: Human**
+> “Explicitly define what is NOT included in this feature.”
+
+---
+
+# 🔁 F. Full System Orchestration
+
+## 21. End-to-End Execution
+
+> **Tool: Multi (OpenCode + Continue + Git)**
+> “Run full lifecycle: analysis → planning → implementation → review → validation → commit.”
+
+---
+
+## 22. System Stabilization Loop
+
+> **Tool: Multi**
+> “Stabilize subsystem. Detect drift, refactor safely, enforce architecture consistency.”
+
+---
+
+## 23. Production Readiness Check
+
+> **Tool: Multi**
+> “Assess if this system is safe for production deployment.”
+
+---
+
+# ⚖️ 5. Vibecoding vs Professional Co-Development
 
 | Aspect      | Vibecoding   | Co-Development System |
 | ----------- | ------------ | --------------------- |
@@ -353,11 +439,11 @@ Every feature follows:
 
 ---
 
-# 🧠 9. Mental Model Shift
+# 🧠 6. Mental Model Shift
 
 ## AI is NOT:
 
-* autonomous developer
+* autonomous engineer
 * system architect
 * decision authority
 
@@ -365,99 +451,29 @@ Every feature follows:
 
 * constrained execution engine
 * diff generator under rules
-* adversarial reasoning proxy
-* structured assistant
+* adversarial reasoning layer
+* structured assistant inside a system
 
 ---
 
-# 🔒 10. Professional Guardrails
+# 🔒 7. Professional Guardrails
 
 * No change without review
 * No commit without validation
-* No untested production code
 * No silent refactors
-* No multi-file changes without intent
+* No multi-file edits without intent
 * No skipping Git checkpoints
-
-These enforce **discipline over convenience**.
 
 ---
 
-# 🚀 11. Final System Outcome
+# 🚀 8. Final System Outcome
 
-You now operate:
-
-> 🧠 A **disciplined AI co-development system with adversarial validation, layered intelligence (local + global), and Git-backed memory**.
+> 🧠 A disciplined AI co-development system with adversarial validation, layered intelligence (local + global via OpenCode), and Git-backed memory.
 
 ---
 
 # 🧭 Final Identity Shift
 
-You are no longer “using AI tools.”
+You are not using AI tools.
 
-Here’s a more expressive, systems-oriented version with consistent iconography and clearer cognitive layering:
-
----
-
-## 🧭 System Roles in AI-Native Co-Development
-
-This is not a toolchain.
-
-It is a **distributed cognitive system** where each component represents a distinct layer of engineering intelligence:
-
-* 🧠👤 **Human = Architect (Authority Layer)**
-  Defines intent, constraints, trade-offs, and system boundaries.
-  Owns final judgment, direction, and responsibility for outcomes.
-
-* 🧠🌐 **Gemini CLI = Brain (System Reasoning Layer)**
-  Performs cross-repository reasoning, dependency analysis, and architectural evaluation.
-  Sees the *system as a whole*, not isolated files.
-
-* ✋💻 **Continue.dev = Hands (Local Execution Layer)**
-  Operates inside the code editor.
-  Implements precise, localized diffs and context-aware modifications.
-
-* 🧾🧠 **Git = Memory (State History Layer)**
-  Stores irreversible snapshots of engineering decisions.
-  Represents system evolution over time, not just code versions.
-
-* 🤖⚙️ **AI Models = Constrained Workforce (Execution Layer)**
-  Generate code, tests, and refactors under strict constraints.
-  Do not decide—only execute within defined boundaries.
-
----
-
-## 🧩 Mental Model Compression
-
-You can think of the system as:
-
-```text
-👤 Human → decides what should exist
-🧠 Gemini CLI → understands what exists globally
-✋ Continue.dev → changes what exists locally
-🧾 Git → remembers what existed before
-🤖 AI → produces candidate implementations under constraint
-```
-
----
-
-## 🧠 System Topology View
-
-```mermaid
-flowchart TD
-    H[🧠👤 Human: Architect] --> G[🧠🌐 Gemini CLI: Brain]
-    H --> C[✋💻 Continue.dev: Hands]
-
-    G --> R[System Reasoning]
-    C --> D[Local Code Diff]
-
-    R --> V[Validation Layer]
-    D --> V
-
-    V --> A[🤖 AI Workforce Execution]
-    A --> S[🧾🧠 Git: Memory State]
-
-    S --> H
-```
-
----
+You are operating a **multi-agent engineering system where every component has a defined cognitive role, constraint boundary, and verification loop**.
