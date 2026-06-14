@@ -1,128 +1,450 @@
-# AAS-as-Code Manifest
-> AAS = Antigravity Awesome Skills
-## The Instruction Set Architecture for AI Cognition
+# 🧠 AAS Skills DSL (v1.1)
 
-This is the **final abstraction layer** of the Architect–Builder OS.
+## Executable Intelligence Specification System
 
-By formalizing AAS into a **Domain-Specific Language (DSL)** and execution runtime, we transition from:
+> AAS (Antigravity Awesome Skills) is no longer a DSL (Domain Specific Language) in the traditional sense.
+> It is a **deterministic runtime for AI cognition built on declarative, executable skill modules.**
+> 
+> A DSL is a mini-language designed to express solutions in a specific domain, in a way both humans and machines can reliably execute or interpret.
+> 
 
-> prompt engineering → system engineering
-> chat interaction → executable cognition
-> probabilistic behavior → constrained computation
-
-This is best understood as:
-
-> **AAS = Virtual ISA for AI Agents**
+AAS defines not just a language—but a **computational system for structured intelligence execution.**
 
 ---
 
-# 1. Core Paradigm Shift
+# 0. System Overview (AAS Full Stack)
 
-### Before (Vibe Coding Era)
+## 🧩 Architecture Stack (Cognitive Execution Pipeline)
 
-* prompts are instructions
-* chat history is memory
-* behavior is emergent
-* execution is probabilistic
-
-### After (AAS Runtime Era)
-
-* skills are **typed executables**
-* filesystem is memory
-* behavior is **constrained and versioned**
-* execution is **deterministic orchestration**
-
----
-
-# 2. AAS Runtime Model (Execution Lifecycle)
-
-Every `.skill.yaml` is executed through a **formal runtime pipeline**, similar to how a CPU executes instructions.
-
-## AAS Execution Pipeline
-
-### 1. Validation Gate (Parse Phase)
-
-* YAML/JSON schema validation
-* dependency resolution (`context.requires`)
-* environment readiness check
-
-If invalid → **execution halts immediately**
-
-> Equivalent: compiler type-check failure
-
----
-
-### 2. Constraint Binding (Sandbox Phase)
-
-The agent enters a **Scoped Execution Persona**:
-
-* `tools.allowed` defines capability boundaries
-* `constraints` define behavioral invariants
-* `context.forbidden` actively suppresses unsafe reasoning paths
-
-> Equivalent: OS-level sandbox + capability-based security model
-
----
-
-### 3. Instruction Execution (Runtime Phase)
-
-Each step in:
-
-```yaml
-execution.steps
+```text id="aas_stack"
+USER INTENT
+    ↓
+PIPELINE ORCHESTRATION (GSD)
+    ↓
+120x FILESYSTEM STATE (Source of Truth)
+    ↓
+AAS SKILL RUNTIME (DSL EXECUTOR / AI ISA)
+    ↓
+SKILL COMPOSITION GRAPH (Execution DAG)
+    ↓
+VALIDATION ENGINE (CI for Cognition)
+    ↓
+ARTIFACT OUTPUT (/src, /docs, /reports)
 ```
 
-is executed as a **stateful micro-operation**:
-
-* sequential execution
-* intermediate state retention
-* step-level observability
-
-> Equivalent: CPU instruction pipeline
-
 ---
 
-### 4. Composition Phase (Call Stack)
+# 1. Repository Structure (Factory of One OS)
 
-If `composition.can_call_skills` is present:
+The entire system is filesystem-native. The repo is the **machine state**.
 
-* skill invokes sub-skills
-* creates execution stack
-* maintains parent context isolation
-
-> Equivalent: function calls in an ISA runtime
-
----
-
-### 5. Verification Gate (Commit Phase)
-
-Outputs are validated against:
-
-```yaml
-validation.checks
+```bash id="aas_repo"
+/
+├── planning/
+│   ├── STATE.md
+│   ├── DECISIONS.md
+│   └── sprint-01/
+│       ├── requirements.md
+│       ├── blueprint.md
+│       ├── acceptance.md
+│       └── spec.json
+│
+├── docs/
+│   ├── architecture.md
+│   ├── system-design.md
+│   └── adr/
+│
+├── src/
+│   └── (generated output)
+│
+├── skills/
+│   ├── architecture_review.skill.yaml
+│   ├── react_generator.skill.yaml
+│   ├── security_audit.skill.yaml
+│
+├── pipelines/
+│   └── feature_delivery.pipeline.yaml
+│
+├── aas/
+│   ├── runtime.config.json
+│   ├── execution-context.md
+│   └── system-prompt.md
+│
+└── README.md
 ```
 
-If checks fail:
+---
 
-* execution is rejected
-* no output is committed
-* control returns to orchestrator
+# 2. AAS Runtime System Prompt (Global Execution Contract)
 
-> Equivalent: CI pipeline gate / test harness
+```markdown id="sys_prompt"
+You are operating inside the AAS (Awesome Skills System) runtime.
+
+You MUST obey:
+
+- Skills are executable specifications, not suggestions
+- YAML constraints are strict and non-negotiable
+- You must not invent missing inputs
+- You must fail if validation conditions are not met
+
+Execution Model:
+1. Load skill definition
+2. Validate inputs
+3. Enter constrained execution mode
+4. Execute step-by-step
+5. Validate outputs
+6. Return structured artifact only
+
+Never behave conversationally unless explicitly requested.
+```
 
 ---
 
-# 3. Skill Pipeline System (AAS CI/CD Layer)
+# 3. Execution Context (Runtime Guardrails)
 
-Skills become composable into **execution graphs (DAGs)**.
+```markdown id="execution_context"
+# AAS Execution Context
 
-## Pipeline Definition Format
+## Determinism Rules
+- Skills behave as pure functions
+- No creative expansion beyond declared steps
+- No hidden assumptions or inference injection
+- Every output must map to declared schema fields
 
-```yaml
+## Runtime Constraints
+- No external APIs unless explicitly declared
+- No writes outside /src or /reports
+- No cross-skill leakage unless composition is defined
+```
+
+---
+
+# 4. Skill DSL (v1.1 Core Schema — Enhanced ISA Definition)
+
+```yaml id="dsl_core"
+skill:
+  id: string
+  name: string
+  version: string
+  description: string
+
+  type: capability | analysis | generation | validation | orchestration
+
+  inputs:
+    - name: string
+      type: string
+      required: true
+      source: file | inline | generated
+
+  outputs:
+    - name: string
+      type: string
+      destination: file | memory | pipeline
+
+  context:
+    requires:
+      - string
+    forbidden:
+      - string
+
+  execution:
+    mode: deterministic | semi-deterministic | exploratory
+
+    state_model:
+      type: stateless | stateful
+      persistence: local | ephemeral
+
+    steps:
+      - id: string
+        name: string
+        instruction: string
+        output: string
+        validation_hook: string
+
+  constraints:
+    - rule: string
+
+  tools:
+    allowed:
+      - string
+    disallowed:
+      - string
+
+  composition:
+    can_call_skills:
+      - skill_id
+
+  hooks:
+    pre_execution: string
+    post_execution: string
+
+  validation:
+    mode: strict | relaxed
+
+    checks:
+      - name: string
+        condition: string
+        severity: error | warning
+
+  metadata:
+    author: string
+    tags: [string]
+    deterministic_score: number
+```
+
+---
+
+# 5. Skill Library (Executable Intelligence Modules)
+
+---
+
+## 5.1 Architecture Review Skill
+
+```yaml id="arch_skill"
+skill:
+  id: architecture_review
+  name: Architecture Review Skill
+  version: 1.1.0
+  description: Enforces system design correctness and boundary integrity.
+
+  type: validation
+
+  inputs:
+    - name: blueprint
+      type: markdown
+      required: true
+      source: file
+
+    - name: requirements
+      type: markdown
+      required: true
+      source: file
+
+  outputs:
+    - name: review_report
+      type: markdown
+      destination: file
+
+  context:
+    requires:
+      - blueprint
+      - requirements
+    forbidden:
+      - code_generation
+      - implementation_suggestions
+
+  execution:
+    mode: deterministic
+
+    steps:
+      - id: boundary_analysis
+        instruction: Identify system boundaries and coupling points
+
+      - id: risk_analysis
+        instruction: Detect scalability and security risks
+
+      - id: requirement_alignment
+        instruction: Validate blueprint against requirements
+
+  constraints:
+    - rule: Must not suggest code
+    - rule: Must remain at architectural level
+
+  tools:
+    allowed:
+      - reasoning
+      - document_analysis
+
+  validation:
+    mode: strict
+    checks:
+      - name: full_coverage
+        condition: "all_sections_reviewed == true"
+```
+
+---
+
+## 5.2 React Component Generator Skill
+
+```yaml id="react_skill"
+skill:
+  id: react_component_generator
+  name: React Component Generator
+  version: 1.1.0
+
+  type: generation
+
+  inputs:
+    - name: component_spec
+      type: json
+      required: true
+
+  outputs:
+    - name: component_code
+      type: code/typescript
+      destination: file
+
+  context:
+    requires:
+      - component_spec
+    forbidden:
+      - UI_invention
+      - external_state_management_unless_declared
+
+  execution:
+    mode: deterministic
+
+    steps:
+      - id: parse_spec
+        instruction: Extract props, state, and UI structure
+
+      - id: generate_component
+        instruction: Create functional React component using hooks only
+
+      - id: type_generation
+        instruction: Generate TypeScript interfaces
+
+      - id: stability_check
+        instruction: Ensure no side effects outside hooks
+
+  constraints:
+    - rule: Functional components only
+    - rule: No external libraries unless specified
+
+  tools:
+    allowed:
+      - codegen
+
+  validation:
+    checks:
+      - name: types_present
+        condition: "interface_exists == true"
+```
+
+---
+
+## 5.3 Security Audit Skill
+
+```yaml id="sec_skill"
+skill:
+  id: security_audit
+  name: Security Audit Skill
+  version: 1.1.0
+
+  type: validation
+
+  inputs:
+    - name: codebase
+      type: code
+      required: true
+
+  outputs:
+    - name: security_report
+      type: markdown
+
+  execution:
+    mode: deterministic
+
+    steps:
+      - id: injection_scan
+        instruction: Detect injection vulnerabilities
+
+      - id: auth_scan
+        instruction: Validate authentication flows
+
+      - id: data_exposure_scan
+        instruction: Identify sensitive data leakage
+
+  constraints:
+    - rule: Must not modify code
+
+  tools:
+    allowed:
+      - static_analysis
+
+  validation:
+    checks:
+      - name: report_valid
+        condition: "findings != null"
+```
+
+---
+
+# 6. Skill Runtime Engine (CLI Specification)
+
+```bash id="cli_spec"
+aas run architecture_review \
+  --input blueprint.md \
+  --context requirements.md \
+  --output report.md
+```
+
+## Runtime Flow
+
+1. Load skill definition (DSL parser)
+2. Validate schema integrity
+3. Inject system runtime prompt
+4. Execute step pipeline sequentially
+5. Enforce constraints at every step
+6. Emit structured artifact output
+
+---
+
+# 7. Execution Prompts (Runtime Control Layer)
+
+## 7.1 Global System Prompt
+
+```markdown id="system_prompt_global"
+You are an AAS Skill Runtime Engine.
+
+Rules:
+- Skills are deterministic programs
+- No deviation from YAML instructions
+- No inference of missing inputs
+- Fail safely on constraint violation
+```
+
+---
+
+## 7.2 Skill Execution Prompt
+
+```markdown id="skill_prompt"
+Execute skill exactly as defined.
+
+Skill Definition:
+{{skill_yaml}}
+
+Inputs:
+{{inputs}}
+
+Execution Rules:
+- Follow steps sequentially
+- Do not add external reasoning
+- Validate each step before continuing
+- Output only declared artifacts
+```
+
+---
+
+## 7.3 Pipeline Execution Prompt
+
+```markdown id="pipeline_prompt"
+You are executing a multi-skill pipeline.
+
+Rules:
+- Each skill runs in isolated context
+- Outputs become next inputs
+- No mutation unless explicitly declared
+```
+
+---
+
+# 8. Pipeline System (CI/CD for Intelligence)
+
+```yaml id="pipeline"
 name: feature_delivery_pipeline
 
 steps:
-
   - skill: architecture_review
     input:
       blueprint: ./planning/blueprint.md
@@ -138,269 +460,101 @@ steps:
 
 ---
 
-## What This Enables
+# 9. Skill Registry (Versioned Intelligence Catalog)
 
-This transforms AI workflows into:
-
-> **Continuous Intelligence Delivery (CID)** pipelines
-
-Where:
-
-* each skill = stage in CI/CD
-* each validation = test suite
-* each pipeline = reproducible cognitive workflow
-
----
-
-# 4. AAS Runtime Architecture (System View)
-
-## Execution Stack
-
-```
-USER INTENT
-    ↓
-PIPELINE ORCHESTRATOR
-    ↓
-VALIDATION GATE (Schema Check)
-    ↓
-SKILL SANDBOX (Constraint Binding)
-    ↓
-STEP EXECUTOR (Instruction Runtime)
-    ↓
-SKILL COMPOSITION STACK
-    ↓
-VERIFICATION ENGINE
-    ↓
-OUTPUT ARTIFACTS (/src, /docs, /reports)
+```json id="registry"
+{
+  "skills": {
+    "architecture_review": "1.1.0",
+    "react_component_generator": "1.1.0",
+    "security_audit": "1.1.0"
+  }
+}
 ```
 
 ---
 
-# 5. Why This Is a Breakthrough (System-Level Analysis)
+# 10. Formal Execution Model (AAS as Virtual ISA)
 
-## 1. Eliminates “Vibe Coding”
-
-No ambiguity in execution:
-
-* no free-form generation
-* no uncontrolled reasoning drift
-* no hidden assumptions
-
-Every behavior is:
-
-> explicitly declared + structurally enforced
-
----
-
-## 2. Introduces Cognitive Determinism
-
-Instead of:
-
-> “model decides how to solve problem”
-
-We now have:
-
-> “system defines how cognition executes”
-
----
-
-## 3. Enables Multi-Model Portability
-
-Because skills are declarative:
-
-* GPT → execution engine
-* Claude → reasoning engine
-* Gemini → validation engine
-* local models → worker nodes
-
-The system becomes:
-
-> **model-agnostic cognitive infrastructure**
-
----
-
-## 4. Turns AI into a Compiler Backend
-
-Mapping:
-
-| Concept          | AAS Equivalent    |
-| ---------------- | ----------------- |
-| Source code      | Intent            |
-| Compiler IR      | Blueprint         |
-| CPU instructions | Skills            |
-| Runtime          | Agent executor    |
-| Test suite       | Validation checks |
-
----
-
-# 6. The “Kill Switch” for Vibe Coding
-
-This system introduces deterministic debugging:
-
-## Instead of:
-
-* reading chat logs
-* guessing what went wrong
-* re-prompting blindly
-
-## You now:
-
-* inspect skill execution logs
-* locate failing step
-* identify violated constraint
-* re-run pipeline
-
-This creates:
-
-> **observability for cognition**
-
----
-
-# 7. Cognitive Portability Layer
-
-Skills become:
-
-* versioned
-* transferable
-* reusable across projects
-
-This creates:
-
-> “behavioral Git repositories for AI agents”
-
-A `/skills` folder is equivalent to:
-
-* a library
-* a runtime extension pack
-* an organizational knowledge system
-
----
-
-# 8. AAS System Options (Implementation Paths)
-
-## Option A — CLI Execution Layer (DX Layer)
-
-```bash
-aas execute architecture_review
+```text id="exec_model"
+skill(input) =
+  validate(input)
+  → bind_context()
+  → execute_steps()
+  → enforce_constraints()
+  → run_validation()
+  → return_output()
 ```
 
-Capabilities:
+---
 
-* loads `.skill.yaml`
-* injects context
-* runs execution pipeline
-* outputs `report.md`
+# 11. Core System Mapping (Computational Analogy)
 
-Best for:
-
-> developers and local workflows
+| System Concept  | AAS Equivalent    |
+| --------------- | ----------------- |
+| CPU             | AI Runtime Engine |
+| Instruction Set | Skills DSL        |
+| Memory          | 120x Filesystem   |
+| Scheduler       | GSD Pipeline      |
+| Compiler        | Skill Parser      |
+| CI/CD           | Validation Engine |
 
 ---
 
-## Option B — GitHub Factory Scaffold (Ecosystem Layer)
+# 12. DSL Definition (Integrated Explanation)
 
-A reusable repository template:
+A **DSL (Domain-Specific Language)** is a language designed for a **single domain of problems**, rather than general-purpose computation.
 
-```
-/planning
-/docs
-/src
-/skills
-/pipelines
-```
+In AAS, the DSL is not just syntax—it is:
 
-Includes:
+> a **machine-readable specification system for intelligence behavior**
 
-* prebuilt skills
-* execution prompts
-* GSD integration
-* 120x structure
+Instead of describing:
 
-Best for:
+> “how to do architecture review”
 
-> rapid adoption + team onboarding
+You define:
+
+> “the executable structure of architecture review as a deterministic system module”
 
 ---
 
-## Option C — AAS Runtime Engine (Core System)
+# 13. Why This Is an AI Operating System
 
-A TypeScript/Bun runtime:
+This system introduces:
 
-Responsibilities:
+### 1. Deterministic execution
 
-* parse skill DSL
-* enforce schema validation
-* orchestrate AI API calls
-* manage execution state
-* enforce constraints
-* run pipeline DAGs
+No ambiguity in AI behavior.
 
-Best for:
+### 2. Composable intelligence
 
-> building the actual **AI operating system kernel**
+Skills behave like modular programs.
 
----
+### 3. Portable cognition
 
-# 9. Strategic Interpretation
+Same skills run across models.
 
-This system is best understood as:
+### 4. CI/CD for reasoning
 
-> AAS is the **ISA (Instruction Set Architecture)**
-> 120x is the **Memory Model**
-> GSD is the **Clock Cycle Scheduler**
-> Skills are the **Machine Instructions**
+Validation becomes infrastructure.
 
-Together they form:
+### 5. Full observability
 
-# 🧠 The AI-Native Operating System
+Every step is traceable and auditable.
 
 ---
 
-# 10. Final Synthesis
+# 14. Final Synthesis
 
-This is the key conceptual breakthrough:
+> AAS transforms AI from a probabilistic language generator into a **structured execution substrate for software-defined intelligence.**
 
-> We are no longer designing prompts for AI.
-> We are designing **computational systems for cognition itself.**
+Not:
 
-This enables:
+* prompts
+* chats
+* agents
 
-* deterministic AI engineering
-* reproducible agent behavior
-* multi-model orchestration
-* CI/CD for intelligence
-* scalable solo “factory” operation
+But:
 
----
-
-# 11. Recommended Build Order (Practical Path)
-
-If operationalizing:
-
-### Phase 1 — GitHub Factory Scaffold
-
-* fastest time-to-value
-* immediate usability
-* integrates 120x + AAS + GSD
-
-### Phase 2 — CLI (`aas-cli`)
-
-* introduces runtime execution
-* enables local deterministic runs
-
-### Phase 3 — Runtime Engine (TypeScript)
-
-* full ISA-level system
-* pipeline DAG execution
-* multi-model orchestration
-
----
-
-# Closing Insight
-
-> The real innovation is not the DSL.
-> It is the transformation of AI from a **language model** into a **structured execution substrate.**
-
-You are effectively defining:
-
-> **The first software architecture for cognition itself.**
+> **a programmable cognitive operating system**
