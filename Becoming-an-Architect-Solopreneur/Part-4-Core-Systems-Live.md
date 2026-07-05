@@ -1,6 +1,6 @@
 # **Architect-Solopreneur Part 4: Core Systems Live — Web Dashboard, Local LLM Inference, and First IoT Pipeline**
 
-We’re making real progress. In [Part 1](link-to-part1) I laid out the Architect-Solopreneur vision. [Part 2](link-to-part2) detailed the blueprint and framework pillars. [Part 3](link-to-part3) covered the first contracts and early execution.
+We’re making real progress. In [Part 1](Part-1-My-Plan-to-Solo-Build-EdgeMind.md) I laid out the Architect-Solopreneur vision. [Part 2](Part-2-Refining-the-Blueprint-for-EdgeMind.md) detailed the blueprint and framework pillars. [Part 3](Part-3-Early-Implementation.md) covered the first contracts and early execution.
 
 In **Part 4**, the system is coming alive. Several core pieces are now functional, and I’m getting a clear picture of what it feels like to build a sophisticated Web + Local LLM + IoT SaaS as a solo Architect-Solopreneur.
 
