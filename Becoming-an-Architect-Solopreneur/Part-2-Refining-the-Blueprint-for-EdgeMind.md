@@ -1,6 +1,6 @@
 **# Architect-Solopreneur Part 2: Refining the Blueprint for EdgeMind — From Plan to Production Standard**
 
-In [Part 1](link-to-part1), I outlined my vision for becoming an **Architect-Solopreneur** and shared the high-level plan for building **EdgeMind** — a privacy-first industrial monitoring SaaS combining web dashboards, local LLMs, and IoT sensors.
+In [Part 1](Part-1-My-Plan-to-Solo-Build-EdgeMind.md), I outlined my vision for becoming an **Architect-Solopreneur** and shared the high-level plan for building **EdgeMind** — a privacy-first industrial monitoring SaaS combining web dashboards, local LLMs, and IoT sensors.
 
 This follow-up dives deeper into the refined blueprint, the force-multiplier mental models I’m embedding, and the emerging **Architect-Solopreneur Framework** I plan to document alongside the product.
 
