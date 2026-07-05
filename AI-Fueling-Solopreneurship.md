@@ -179,13 +179,202 @@ flowchart TD
 
 ---
 
-### Ready-to-Use Micro-Project Starters
+# Ready-to-Use Micro-Project Starters
 
 **1. Meeting Notes to Action Items Agent**  
-(Full **INTENT.md** and **TASK_GRAPH.json** as provided in the original — enhanced for clarity, with stronger success criteria and risk handling. Use it as-is or fork.)
+Below is a ready-to-use starter pair tailored to a highly practical micro-project: **a local “meeting notes to action items” agent** that takes a pasted transcript, extracts decisions, tasks, owners, and deadlines, then produces a clean Markdown summary plus a structured JSON output. That kind of small, high-frequency workflow fits the agentic patterns used for decomposition, reflection, and DAG orchestration, and it maps well to the self-healing loops and modular task graphs common in agentic workflow designs. [beam](https://beam.ai/agentic-insights/the-9-best-agentic-workflow-patterns-to-scale-ai-agents-in-2026)
 
-**2. Blog Research Agent**  
-(Full **INTENT.md** and **TASK_GRAPH.json** as provided — polished for tighter scope and better critic integration.)
+## Ready‑to‑use INTENT.md and TASK_GRAPH.json files tailored to a specific micro‑project
+
+## INTENT.md
+
+```md
+# INTENT.md
+
+## Project Name
+Meeting Notes Agent
+
+## Problem Statement
+I need a reliable way to turn messy meeting notes or transcript text into clear, usable outputs: decisions, action items, owners, deadlines, risks, and a concise summary.
+
+## Target User
+A solo builder, consultant, or small team lead who regularly captures meeting notes and needs faster follow-up without manual cleanup.
+
+## Core Value Hypothesis
+If I can convert raw notes into structured actions in one pass, I will reduce administrative overhead, improve follow-through, and create a repeatable workflow I can trust.
+
+## Success Criteria
+- Extract at least 90% of explicit action items correctly.
+- Identify owners and deadlines when they are present in the source text.
+- Produce a clean Markdown summary in under 60 seconds for a typical meeting transcript.
+- Generate valid JSON output that can be reused in other tools or workflows.
+- Keep the workflow fully local and privacy-safe where possible.
+
+## Non-Negotiables
+- Do not invent tasks, owners, or deadlines.
+- Do not alter the meaning of decisions.
+- If confidence is low, mark the field as "uncertain" instead of guessing.
+- Preserve source fidelity and quote critical lines when needed.
+- Keep outputs concise, readable, and immediately usable.
+
+## Scope
+### In Scope
+- Paste-in transcript or notes input.
+- Extraction of decisions, action items, names, dates, and risks.
+- Markdown summary generation.
+- Structured JSON output.
+- Optional critique/validation pass before final output.
+
+### Out of Scope
+- Calendar scheduling.
+- Email sending.
+- Automated task creation in external tools.
+- Voice transcription.
+
+## Workflow Outcome
+A single input should produce:
+1. A short executive summary.
+2. A decision list.
+3. An action-item list with owners and deadlines where available.
+4. A structured JSON artifact for downstream use.
+
+## Quality Bar
+The output should be accurate enough to send to stakeholders with minimal editing.
+The model should prefer under-capture over hallucination.
+The final artifact should be consistent across repeated runs on similar input.
+
+## Risks
+- Hallucinated action items.
+- Wrong owner assignment.
+- Deadline misreading.
+- Overconfident summaries.
+- Loss of nuance from the original notes.
+
+## Handling Ambiguity
+- Use "uncertain" when data is incomplete.
+- Separate inferred items from explicit items.
+- Ask for clarification only when the ambiguity blocks meaningful output.
+
+## Revision Rule
+Update this intent after real test runs, especially when:
+- Extraction quality is inconsistent.
+- The summary is too verbose.
+- The JSON schema needs refinement.
+- Users request a different output shape.
+```
+
+## TASK_GRAPH.json
+
+```json
+{
+  "project_name": "Meeting Notes Agent",
+  "version": "1.0",
+  "objective": "Convert raw meeting notes or transcripts into validated summaries and structured action items.",
+  "nodes": [
+    {
+      "id": "task_01",
+      "name": "Input normalization",
+      "description": "Clean pasted notes, remove obvious formatting noise, and preserve source text.",
+      "agent": "preprocessor",
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Input is preserved in a normalized text format.",
+        "Blank lines and stray artifacts are handled safely."
+      ]
+    },
+    {
+      "id": "task_02",
+      "name": "Entity extraction",
+      "description": "Extract participants, dates, decisions, action items, owners, and risks from the normalized input.",
+      "agent": "extraction_agent",
+      "dependencies": ["task_01"],
+      "acceptance_criteria": [
+        "Explicit action items are captured.",
+        "Owners and deadlines are extracted when present.",
+        "No unsupported facts are invented."
+      ]
+    },
+    {
+      "id": "task_03",
+      "name": "Summary generation",
+      "description": "Generate a concise Markdown summary with decisions and next steps.",
+      "agent": "summary_agent",
+      "dependencies": ["task_02"],
+      "acceptance_criteria": [
+        "Summary is readable and concise.",
+        "Output reflects the source text faithfully.",
+        "No key decision is omitted if it is explicit in the input."
+      ]
+    },
+    {
+      "id": "task_04",
+      "name": "JSON structuring",
+      "description": "Convert extracted content into a reusable JSON object.",
+      "agent": "schema_agent",
+      "dependencies": ["task_02"],
+      "acceptance_criteria": [
+        "JSON validates against the agreed schema.",
+        "Fields are consistently named.",
+        "Uncertain fields are marked clearly."
+      ]
+    },
+    {
+      "id": "task_05",
+      "name": "Critic validation",
+      "description": "Check for hallucinations, missing critical items, and schema mismatch.",
+      "agent": "critic_agent",
+      "dependencies": ["task_03", "task_04"],
+      "acceptance_criteria": [
+        "Output is checked against the source text.",
+        "Hallucinated fields are flagged.",
+        "Format and content issues are reported."
+      ]
+    },
+    {
+      "id": "task_06",
+      "name": "Correction loop",
+      "description": "Revise summary and JSON based on critic feedback.",
+      "agent": "correction_agent",
+      "dependencies": ["task_05"],
+      "acceptance_criteria": [
+        "Critical issues are corrected.",
+        "Final output improves accuracy and clarity."
+      ]
+    },
+    {
+      "id": "task_07",
+      "name": "Final packaging",
+      "description": "Bundle the final Markdown summary and JSON artifact for downstream use.",
+      "agent": "packaging_agent",
+      "dependencies": ["task_06"],
+      "acceptance_criteria": [
+        "Final Markdown is complete and readable.",
+        "JSON is ready for export or storage.",
+        "Artifacts are labeled and versioned."
+      ]
+    }
+  ],
+  "edges": [
+    ["task_01", "task_02"],
+    ["task_02", "task_03"],
+    ["task_02", "task_04"],
+    ["task_03", "task_05"],
+    ["task_04", "task_05"],
+    ["task_05", "task_06"],
+    ["task_06", "task_07"]
+  ],
+  "definition_of_done": [
+    "Summary matches the transcript.",
+    "Structured JSON validates.",
+    "Critic reports no unresolved hallucinations.",
+    "Output is suitable for real stakeholder follow-up."
+  ]
+}
+```
+
+## Why this micro-project works
+
+This project is small enough to ship quickly, but useful enough to become part of a real workflow. It follows the agentic pattern of decomposition, specialized execution, and validation, which is exactly what makes these systems reliable in practice. It also gives you a clean test case for refining intent, critic rules, and output schemas before you scale to something more ambitious. [evomap](https://evomap.ai/es/blog/agentic-workflows-2026-how-they-work)
 
 These micro-projects are perfect entry points: small enough to complete quickly, valuable enough to integrate into daily work, and excellent practice for the full agentic pattern of intent → decomposition → execution → critic-driven validation.
 
