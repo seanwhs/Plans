@@ -1,12 +1,12 @@
 # **Architect-Solopreneur Part 8: Public Beta Prep, Advanced Analytics, and Sustainable Product Momentum**
 
-We’ve reached a significant chapter. Previous parts traced the journey from vision and blueprint through contracts, core systems, beta launch, and real-user feedback. In **Part 8**, EdgeMind prepares for public beta, gains advanced analytics capabilities, and solidifies as a sustainable product.
+We’ve reached a significant chapter. Previous parts traced the journey from vision and blueprint through contracts, core systems, closed beta, and real-user feedback. In **Part 8**, EdgeMind prepares for public beta, gains advanced analytics capabilities, and solidifies as a sustainable product.
 
 ---
 
 ### Current Status: From Beta to Broader Availability
 
-EdgeMind is now stable in closed beta. With positive early feedback and the framework maturing, I’m shifting focus toward wider accessibility and long-term product viability.
+EdgeMind is now stable in closed beta. With positive early feedback and the framework maturing rapidly, I’m shifting focus toward wider accessibility and long-term product viability.
 
 ---
 
@@ -25,6 +25,7 @@ EdgeMind is now stable in closed beta. With positive early feedback and the fram
 - Customizable KPI cards driven by Sanity CMS configurations
 
 #### 3. Performance & Scale Improvements
+
 Updated benchmarks from continued optimization:
 
 **Latest Latency Benchmarks (Mixed Environments):**
@@ -73,7 +74,7 @@ The system is becoming increasingly self-improving through real usage data.
 - **User experience details matter enormously** at this stage. Even small friction points in onboarding get amplified with more users.
 - **Analytics feedback** is incredibly valuable for guiding roadmap decisions.
 - The Contractual Foundation continues to pay dividends — adding new features like custom reports was faster than expected.
-- Balancing “move fast” with “don’t break privacy or reliability” is the core tension of industrial SaaS, and the governance loop helps navigate it.
+- Balancing “move fast” with “don’t break privacy or reliability” is the core tension of industrial SaaS, and the governance loop helps navigate it effectively.
 
 ---
 
@@ -105,7 +106,6 @@ This isn’t just about building one SaaS product. It’s about pioneering a new
 ---
 
 **Join the Movement:**
-
 - The Architect-Solopreneur Framework v0.3 is available now.
 - Public beta waitlist is open — comment or reach out if you’d like early access.
 - What should Part 9 focus on most?
