@@ -1,6 +1,6 @@
 # **Architect-Solopreneur Part 3: Early Implementation — First Contracts, Agentic Loops, and Real Progress on EdgeMind**
 
-In [Part 1](link-to-part1) I shared the vision of becoming an Architect-Solopreneur. In [Part 2](link-to-part2) I refined the blueprint, introduced the three pillars of the Architect-Solopreneur Framework, and addressed key production concerns.
+In [Part 1](Part-1-My-Plan-to-Solo-Build-EdgeMind.md) I shared the vision of becoming an Architect-Solopreneur. In [Part 2](Part-2-Refining-the-Blueprint-for-EdgeMind.md) I refined the blueprint, introduced the three pillars of the Architect-Solopreneur Framework, and addressed key production concerns.
 
 Now in **Part 3**, I’m moving from planning into early execution. Here’s what I’ve done so far, the lessons emerging, and how the framework is already proving its value.
 
