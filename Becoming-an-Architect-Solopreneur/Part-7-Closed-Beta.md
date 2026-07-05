@@ -6,7 +6,7 @@ The journey has reached a pivotal stage. Previous parts covered the vision, blue
 
 ### Beta Status: First Real Users
 
-I have onboarded three early industrial partners (a small manufacturing plant, a warehouse operator, and a pilot facility). EdgeMind is now running in live environments with actual IoT hardware.
+I have onboarded three early industrial partners — a small manufacturing plant, a warehouse operator, and a pilot facility. EdgeMind is now running in live environments with actual IoT hardware.
 
 ---
 
@@ -24,6 +24,7 @@ I have onboarded three early industrial partners (a small manufacturing plant, a
 - Regular automated security scans via OpenCode CLI hooks
 
 #### 3. Performance Optimizations
+
 Updated real-world benchmarks from beta environments:
 
 **Current Latency Benchmarks (Production Hardware):**
@@ -45,7 +46,7 @@ Based on beta learnings, I’ve released **v0.2** of the Architect-Solopreneur F
 - Improved Critic Agent rules for multi-tenant applications
 - Sample Inngest patterns refined from real IoT field conditions
 
-The framework is proving valuable not just for me, but for the early users who are adapting pieces for their own internal tools.
+The framework is proving valuable not just for me, but for early users who are already adapting pieces for their own internal tools.
 
 ---
 
@@ -54,7 +55,7 @@ The framework is proving valuable not just for me, but for the early users who a
 **Positive:**
 - “The natural language explanations from the local LLM are surprisingly helpful for our floor operators.” — Plant Manager
 - Dashboard speed and GSAP animations praised for usability
-- Privacy confidence is high due to on-prem LLM approach
+- Privacy confidence is high due to the on-prem LLM approach
 
 **Challenges Raised:**
 - Need for more customizable reporting views
@@ -102,7 +103,9 @@ The loop now explicitly includes user feedback as a first-class input.
 
 ### The Architect-Solopreneur Reality Check
 
-After seven parts, the conclusion is clear: This model works. A single Architect-Solopreneur, supported by disciplined systems, strong contracts, and governed AI agents, can build, ship, and iterate on complex industrial software that integrates web, local intelligence, and physical devices.
+After seven parts, the conclusion is clear: **This model works.**
+
+A single Architect-Solopreneur, supported by disciplined systems, strong contracts, and governed AI agents, can build, ship, and iterate on complex industrial software that integrates web, local intelligence, and physical devices.
 
 We are witnessing the decline of the traditional synchronization tax and the rise of high-leverage, high-clarity solo (or micro-team) building.
 
@@ -111,7 +114,6 @@ EdgeMind is no longer just a project — it is living proof that the Architect-S
 ---
 
 **Your Turn:**
-
 - If you’re interested in joining the waitlist for the public beta or trying the framework, let me know.
 - What aspect of the Architect-Solopreneur journey would you like explored in Part 8?
 
