@@ -1,4 +1,4 @@
-**# The Architect's Renaissance: How AI Is Turning Elite Engineers into Architect-Solopreneurs**
+# **The Architect's Renaissance: How AI Is Turning Elite Engineers into Architect-Solopreneurs**
 
 > *The defining question of software engineering is no longer:*  
 > **"How quickly can you write code?"**  
