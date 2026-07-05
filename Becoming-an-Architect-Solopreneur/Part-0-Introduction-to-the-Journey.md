@@ -70,7 +70,7 @@ EdgeMind is the proof-of-concept. This series is the public documentation.
 
 **Ready to begin?**
 
-Start with **Part 1** — where the vision is defined and the journey officially begins.
+Start with **Part 1** [Part 0]: Part-0-Introduction-to-the-Journey.md — where the vision is defined and the journey officially begins.
 
 I’ll be building in public, sharing both successes and struggles. I invite you to follow along, ask questions, and apply these ideas to your own work.
 
