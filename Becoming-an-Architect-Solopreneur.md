@@ -1,4 +1,4 @@
-**# Becoming an Architect-Solopreneur: My Plan to Solo-Build EdgeMind — A Web + Local LLM + IoT SaaS**
+# **Becoming an Architect-Solopreneur Part 1: My Plan to Solo-Build EdgeMind — A Web + Local LLM + IoT SaaS**
 
 In 2026, the ultimate advantage belongs to the **Architect-Solopreneur**: a single engineer who orchestrates intelligent agents, enforces architectural integrity, and transforms clear intent into verified, production-grade systems — without the drag of large-team coordination.
 
