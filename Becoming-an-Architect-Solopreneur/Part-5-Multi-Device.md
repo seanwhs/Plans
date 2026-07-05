@@ -1,6 +1,6 @@
 # **Architect-Solopreneur Part 5: Multi-Device Reality, Advanced Features, and the Framework Takes Shape**
 
-The momentum is building. [Part 1](link-to-part1) outlined the vision. [Part 2](link-to-part2) detailed the blueprint. [Part 3](link-to-part3) covered first contracts. [Part 4](link-to-part4) brought core pipelines to life.
+The momentum is building. [Part 1](Part-1-My-Plan-to-Solo-Build-EdgeMind.md) outlined the vision. [Part 2](Part-2-Refining-the-Blueprint-for-EdgeMind.md) detailed the blueprint. [Part 3](Part-3-Early-Implementation.md) covered first contracts. [Part 4](Part-4-Core-Systems-Live.md) brought core pipelines to life.
 
 In **Part 5**, EdgeMind is crossing important thresholds: multi-device support, smarter alerting, real hardware integration, and significant progress on the Architect-Solopreneur Framework.
 
