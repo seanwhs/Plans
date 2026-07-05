@@ -10,7 +10,7 @@
 
 ---
 
-## The End of the Headcount Era
+# The End of the Headcount Era
 
 For the past three decades, the software industry operated on a deceptively simple assumption:
 
@@ -34,7 +34,7 @@ The model worked—until organizations encountered their greatest hidden cost:
 
 The synchronization tax is the enormous overhead created by communication, coordination, handoffs, meetings, context switching, approvals, and organizational alignment.
 
-And as organizations grow, this tax often compounds faster than productive output.
+As organizations grow, this tax frequently compounds faster than productive output.
 
 We are now witnessing the first technological shift capable of attacking this problem at its root.
 
@@ -48,30 +48,33 @@ This is the beginning of what I call:
 
 ---
 
-## The Silent Killer: The Synchronization Tax
+# The Silent Killer: The Synchronization Tax
 
 Traditional software organizations assumed complexity required scale.
 
 The result looked something like this:
 
-```text
-Product Manager
-      ↓
-Business Analysts
-      ↓
-Solution Architects
-      ↓
-Backend Teams
-      ↓
-Frontend Teams
-      ↓
-Security Teams
-      ↓
-QA Teams
-      ↓
-DevOps / SRE
-      ↓
-Release Management
+```mermaid
+flowchart TD
+    A[Product Manager]
+    B[Business Analysts]
+    C[Solution Architects]
+    D[Backend Teams]
+    E[Frontend Teams]
+    F[Security & Compliance]
+    G[QA & Testing]
+    H[DevOps & SRE]
+    I[Release Management]
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    D --> F
+    E --> F
+    F --> G
+    G --> H
+    H --> I
 ```
 
 Every arrow introduces hidden costs:
@@ -101,7 +104,7 @@ AI changes this equation.
 
 ---
 
-## The Great Inversion: Human as Orchestrator
+# The Great Inversion: Human as Orchestrator
 
 The breakthrough of AI is not that machines can write code.
 
@@ -111,24 +114,18 @@ The breakthrough is that:
 
 This represents a fundamental inversion.
 
-### The old model
+```mermaid
+flowchart LR
+    A[Human Worker Model]
+    A --> B[Human Writes Code]
+    B --> C[Human Tests]
+    C --> D[Human Deploys]
 
-```text
-Human → Implementation
-```
-
-### The new model
-
-```text
-Human → Intent
-        ↓
-    Orchestration
-        ↓
-      Agents
-        ↓
-   Verification
-        ↓
-     Reality
+    E[Human Orchestrator Model]
+    E --> F[Define Intent]
+    F --> G[Agent Execution]
+    G --> H[Critic Verification]
+    H --> I[Production Reality]
 ```
 
 The human no longer acts primarily as a worker.
@@ -161,7 +158,7 @@ The most powerful archetype emerging from this transition is the:
 
 An Architect-Solopreneur is not a lone coder.
 
-They are:
+They are simultaneously:
 
 * Product strategist
 * Systems architect
@@ -204,12 +201,32 @@ The organization becomes software itself.
 
 ```mermaid
 flowchart TD
-    A[Intent] --> B[Planner]
+    A[Intent]
+    A --> B[Planner]
+
     B --> C[Task Graph]
-    C --> D[Specialized Agents]
-    D --> E[Verification Layer]
-    E --> F[Gated Deployment]
+
+    C --> D[Frontend Agent]
+    C --> E[Backend Agent]
+    C --> F[Data Agent]
+    C --> G[Security Agent]
+    C --> H[DevOps Agent]
+
+    D --> I[Verification]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J[Gated Deployment]
 ```
+
+Execution becomes:
+
+* Parallel
+* Observable
+* Deterministic
+* Repeatable
 
 The repository is no longer just source code.
 
@@ -222,6 +239,20 @@ It becomes simultaneously:
 * Organizational memory
 * Audit trail
 
+```mermaid
+mindmap
+  root((Repository))
+    Intent
+    Planning
+    Contracts
+    Memory
+    Governance
+    Evaluation
+    Architecture
+    Operations
+    Audit
+```
+
 The repository becomes the organization.
 
 ---
@@ -232,145 +263,40 @@ The human architect provides strategy and judgment.
 
 Agents perform decomposition, execution, and verification.
 
----
+```mermaid
+flowchart LR
+    A[Intent]
+    --> B[Planning]
+    --> C[Contracts]
+    --> D[Parallel Execution]
+    --> E[Verification]
+    --> F[Iteration]
+    --> G[Deployment]
+```
 
-## Phase 1 — Intent Definition
-
-The architect defines high-fidelity intent artifacts.
-
-### INTENT.md
-
-Captures:
-
-* Vision
-* User stories
-* Outcomes
-* Success metrics
-* Non-negotiables
-
-### PROJECT_GOALS.yaml
-
-Defines:
-
-* Objectives
-* KPIs
-* Constraints
-* Technology choices
-* Scalability requirements
-* Compliance requirements
-
-### TRADEOFFS.md
-
-Documents:
-
-* Architectural decisions
-* Accepted compromises
-* Explicit assumptions
-
-### RISK_REGISTER.md
-
-Identifies:
-
-* Technical risks
-* Business risks
-* Market risks
-
-These artifacts define the "why."
+Then keep your existing seven phases exactly as written.
 
 ---
 
-## Phase 2 — Planning & Decomposition
+# The Critic: The Missing Layer of AI Systems
 
-Planning agents produce:
+The most important component of an agentic organization is not the generator.
 
-* PLAN.md
-* TASK_GRAPH.json
-* DEPENDENCY_MAP.json
-* ADRs
-* ROADMAP.md
+It is the critic.
 
-The architect approves.
+```mermaid
+flowchart TD
+    A[Task Definition]
+        --> B[Agent Execution]
 
----
+    B --> C{Quality Gate}
 
-## Phase 3 — Contract Definition
+    C -- Fail --> D[Critic Audit]
+    D --> E[Correction Loop]
+    E --> B
 
-Contract agents generate:
-
-* OpenAPI specifications
-* AsyncAPI specifications
-* Database schemas
-* Event contracts
-* Frontend contracts
-* Infrastructure contracts
-
-Contracts eliminate ambiguity.
-
----
-
-## Phase 4 — Parallel Execution
-
-Specialized agents work concurrently.
-
-### Frontend Agent
-
-Produces:
-
-* Components
-* Accessibility
-* Tests
-* Storybook
-
-### Backend Agent
-
-Produces:
-
-* Domain logic
-* APIs
-* Authentication
-* Integration tests
-
-### Data Agent
-
-Produces:
-
-* Schemas
-* Pipelines
-* Analytics
-
-### DevOps Agent
-
-Produces:
-
-* IaC
-* CI/CD
-* Monitoring
-* Deployment configuration
-
-### Security Agent
-
-Produces:
-
-* Threat models
-* Security scans
-* Compliance reports
-
----
-
-## Phase 5 — Verification
-
-Independent agents validate:
-
-* Tests
-* Security
-* Performance
-* Accessibility
-* Compliance
-* Reliability
-
-Most importantly:
-
-## Critic Agent
+    C -- Pass --> F[Production Output]
+```
 
 The critic:
 
@@ -380,74 +306,13 @@ The critic:
 * Prevents self-certification
 * Forces evidence-based reasoning
 
-The architect reviews summaries, exceptions, and escalations.
-
----
-
-## Phase 6 — Iteration
-
-Failures become feedback.
-
-Feedback updates intent.
-
-The system loops.
-
----
-
-## Phase 7 — Deployment & Stewardship
-
-The system produces:
-
-* Production infrastructure
-* Dashboards
-* Alerts
-* Runbooks
-* Operational documentation
-* Handover artifacts
-
-What once required months now takes days.
-
-Often with better documentation and stronger governance.
+This is the leap from prompting to orchestration.
 
 ---
 
 # The Four Foundational Artifact Classes
 
-Every effective agentic organization depends on four artifact types.
-
-## 1. Intent Artifacts
-
-Define:
-
-* Purpose
-* Constraints
-* Success
-
-## 2. Planning Artifacts
-
-Externalize:
-
-* Reasoning
-* Sequencing
-* Dependencies
-
-## 3. Contract Artifacts
-
-Specify:
-
-* Interfaces
-* Expectations
-* Guarantees
-
-## 4. Evaluation Artifacts
-
-Provide:
-
-* Verification
-* Auditability
-* Evidence
-
-These artifacts transform repositories into executable organizations.
+Keep this section exactly as written.
 
 ---
 
@@ -457,26 +322,28 @@ Agents are not magic.
 
 They hallucinate.
 
-They optimize the wrong objectives.
+They optimize incorrect objectives.
 
 They reinforce bad assumptions.
 
-They generate false confidence.
+They generate dangerous false confidence.
 
-The architect therefore becomes something new:
+The architect therefore becomes something entirely new:
 
 > An organizational systems engineer.
 
-Debugging evolves from:
+```mermaid
+flowchart LR
+    A[Traditional Engineering]
+    A --> B[Debug Functions]
+    A --> C[Debug Services]
+    A --> D[Debug Infrastructure]
 
-```text
-Debugging functions
-```
-
-to:
-
-```text
-Debugging organizations
+    E[Agentic Engineering]
+    E --> F[Debug Agents]
+    E --> G[Debug Task Graphs]
+    E --> H[Debug Critic Systems]
+    E --> I[Debug Organizations]
 ```
 
 The architect debugs:
@@ -495,163 +362,84 @@ This is a deeper form of engineering.
 
 # The Six Skills of the Agentic Era
 
-## 1. Agent Orchestration
+Keep all six sections.
 
-Learn to design:
+Remove the individual diagrams from:
 
-* Agent teams
-* Critic loops
-* Retry systems
-* Escalation paths
-* Governance policies
+* Robotics
+* Curation
+* Distribution
+* Builder-distributor
+* Community
 
----
-
-## 2. Distribution Engineering
-
-The market rewards:
-
-* Discovery
-* Attention
-* Resonance
-
-Not hidden excellence.
+Those diagrams fragment the narrative flow.
 
 ---
 
-## 3. Robotics
+# Synthesis: Building Leverage Stacks
 
-The next decade rewards builders who understand both:
+Replace the table with:
 
-* Bits
-* Atoms
+```mermaid
+flowchart TD
+    A[Operator Stack]
+    A --> B[Agents]
+    A --> C[Builder-Distributor]
 
-Reality remains the ultimate benchmark.
+    D[Authority Stack]
+    D --> E[Curation]
+    D --> F[Community]
 
----
+    G[Founder Stack]
+    G --> H[Distribution]
+    G --> I[Agents / Robotics]
+```
 
-## 4. Curation
+The future does not reward generalists who dabble in everything.
 
-In a world of infinite content:
+It rewards operators who know how to combine:
 
-> Taste becomes infrastructure.
-
----
-
-## 5. Builder-Distributor Loops
-
-Build.
-
-Ship.
-
-Measure.
-
-Learn.
-
-Repeat.
-
-Fast.
-
----
-
-## 6. IRL Community Design
-
-Trust becomes increasingly scarce.
-
-The premium asset becomes:
-
-> High-context human relationships.
+* Systems
+* Judgment
+* Distribution
+* Taste
+* Leverage
 
 ---
 
 # Risk, Responsibility, and Hubris
 
-Agentic systems amplify human judgment.
-
-Including bad judgment.
-
-Architects must therefore own:
-
-* Governance
-* Safety
-* Auditability
-* Reversibility
-* Escalation
-* Accountability
-
-The greatest danger is not AI failure.
-
-It is human overconfidence.
-
-Never confuse:
-
-> Fluency with correctness.
-
-Demand evidence.
-
-Demand verification.
-
-Demand criticism.
+Keep exactly as written.
 
 ---
 
 # The New Competitive Advantage
 
-The defining skill of the next decade is no longer:
-
-> "How quickly can you implement?"
-
-It is:
-
-> "How effectively can you design systems that transform intent into verified reality?"
-
-This requires mastery of:
-
-* Architecture
-* Constraint engineering
-* Artifact design
-* Agent orchestration
-* Verification
-* Observability
-* Governance
-* Organizational debugging
-
-The highest leverage engineer is no longer merely a developer.
-
-They are the architect of intelligent organizations.
+Keep exactly as written.
 
 ---
 
 # The Architect's Renaissance
 
-AI is not ending software engineering.
+Keep your existing conclusion.
 
-It is elevating it.
+It is already strong:
 
-Large enterprises will continue to require human organizations.
-
-But for the overwhelming majority of products, internal systems, startups, and digital businesses:
-
-> One skilled architect working with intelligent agents will outperform what once required entire departments.
-
-The solopreneur of 2026 is not a lone coder.
-
-They are the architect of autonomous organizations.
-
-They do not build software.
-
-They build systems that build software.
-
-They do not manage labor.
-
-They orchestrate intelligence.
-
-They do not optimize effort.
-
-They optimize clarity, judgment, and leverage.
+> They do not build software.
+>
+> They build systems that build software.
+>
+> They do not manage labor.
+>
+> They orchestrate intelligence.
+>
+> They do not optimize effort.
+>
+> They optimize clarity, judgment, and leverage.
 
 The synchronization tax is dying.
 
 And what replaces it will reward those who can architect intent, orchestrate intelligence, and verify reality.
 
-The age of the Architect-Solopreneur has only just begun.
+**The age of the Architect-Solopreneur has only just begun.**
+
