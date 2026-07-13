@@ -1,5 +1,7 @@
 # The GreyMatter Manifesto: Building the "Second Stack" Cooperative
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/e70dca0f-98f9-4d57-97fc-dca93d573837" />
+
 For years, I’ve operated at the intersection of enterprise architecture and technical training. I’ve seen projects succeed because of sound judgment, and I’ve seen them fail because of "vibecoding"—relying on black-box AI to generate code without oversight.
 
 Today, I’m launching **GreyMatter AI**. It’s not just a freelance shop; it’s a **Cooperative Agency** designed to bridge the gap between enterprise-grade reliability and AI-native agility.
