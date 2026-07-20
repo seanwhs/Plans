@@ -1,4 +1,4 @@
-# Companion Post: Engineering the Modern Quartet  
+# Engineering the Modern Quartet  
 **Resilient User Onboarding with Next.js 16, Inngest, Neon, Clerk, and Sanity**
 
 When you treat an LLM as a junior developer with infinite velocity, you quickly learn a hard truth:
