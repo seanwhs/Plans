@@ -1,4 +1,4 @@
-**From Web Stack to Living System: Engineering a Multi-Surface Architecture**
+# From Web Stack to Living System: Engineering a Multi-Surface Architecture
 
 When I left the corporate world to pivot into full-time freelancing, I realized that my previous methods of “building for scale” were recipes for maintenance hell. In the enterprise you have teams for DevOps and SRE. As a solopreneur focusing on web development, enterprise architecture, and training, **I don’t have that luxury.**
 
